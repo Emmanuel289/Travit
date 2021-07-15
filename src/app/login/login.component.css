@@ -1,17 +1,26 @@
 
+
 form{
    
-    position: relative;
-
-    align-content: center;
+    /* Center the form on the page */
+    margin: 0 auto;
+    width: 500px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
 }
 
 form.login {
     display: table;
+    margin: 0 auto;
+    width: 500px;
 }
 
 div.login{
     display: table-row;
+    margin: 0 auto;
+    width: 500px;
 }
 
 label, input {
