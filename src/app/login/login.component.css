@@ -1,0 +1,24 @@
+
+form{
+   
+    position: relative;
+
+    align-content: center;
+}
+
+form.login {
+    display: table;
+}
+
+div.login{
+    display: table-row;
+}
+
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-right: 10px;
+}
