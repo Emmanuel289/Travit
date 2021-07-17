@@ -1,33 +1,33 @@
+body {
+
+    background-color: aquamarine;
+
+
+}
 
 
 form{
-   
-    /* Center the form on the page */
+
     margin: 0 auto;
     width: 500px;
-    /* Form outline */
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
 }
 
-form.login {
-    display: table;
+
+input{
+
+    width : 80%;
+    padding: 0 10px;
     margin: 0 auto;
-    width: 500px;
+    box-sizing: border-box;
 }
 
-div.login{
-    display: table-row;
-    margin: 0 auto;
-    width: 500px;
-}
 
-label, input {
-    display: table-cell;
-    margin-bottom: 10px;
-}
+input:focus, textarea:focus {
+    background   : rgba(0,0,0,.1);
+    border-radius: 5px;
+  }
+  
 
-label {
-    padding-right: 10px;
-}

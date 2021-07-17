@@ -7,8 +7,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
+  h1{
+    color: #1976d2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:xx-large
+  }
+  h2 
   h3,
   h4,
   h5,
