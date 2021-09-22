@@ -1,5 +1,5 @@
 # Travit
-A traveller's guide with search features, bookings, trending travel articles, and recommendations to top destinations
+Travit is a traveller's guide that allows users to search and preview locations, book trips, access trending travel articles, and get recommendations to top destinations.
 
 ## Features
 
