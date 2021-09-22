@@ -3,7 +3,7 @@ A traveller's guide with search features, bookings, trending travel articles, an
 
 ## Features
 
-- Travit can recommend destinations to a user by analyzing their travel history and matching their previously visited destinations to similar locations
+- Travit can recommend destinations to a user by analyzing their travel history and matching their previously visited destinations to similar locations.
 
 - A user can browse a worldwide list of countries and filter by cities and landmarks and discover new places that might pique their travel interests.
 
