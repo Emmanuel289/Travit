@@ -1,8 +1,5 @@
 pipeline {
-    agent {
-        image 'node:12-stretch'
-        args '-p 3000:3000'
-        }
+    agent { any { image 'node:12.16.2' args '-p 3000:3000' } }
     stages {
         stage ('Build') {
             steps {
