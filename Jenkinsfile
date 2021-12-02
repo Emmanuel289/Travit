@@ -1,27 +1,34 @@
 pipeline {
-    agent any
-
+    agent { any }
     stages {
-        stage('Build') {
+        stage ('Build') {
             steps {
-                echo 'Building source files in Travit ...'
-                sh 'ng build'
+                echo 'Installing packages and dependencies'
+                sh 'npm install'
             }
             steps {
-                echo 'Running build artifact ...'
-                sh 'ng serve --open'
-            }
-        }
-        stage('Test'){
-            steps {
-                echo 'Running all tests...'
-                sh 'ng test'
+                echo 'Compiling source code'
+                sh 'npm start'
             }
         }
-        stage('Deliver'){
+
+        stage ('Test') {
             steps {
-                echo 'Deploying Travit to production'
+                echo ' Running unit tests'
+                sh 'npm run-script test'
             }
+        }
+
+        stage ('Deliver') {
+            steps {
+                echo 'Compiling static bundle'
+                sh 'npm build'
+            }
+
+            steps {
+                echo 'Exiting application'
+            }
+
         }
     }
 }
