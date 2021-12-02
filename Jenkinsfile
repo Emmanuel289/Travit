@@ -1,7 +1,7 @@
 pipeline {
-    agent { docker { image 'node:14-alpine' } }
+    agent { docker { image 'node:12-stretch' } }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 echo 'Building source files in Travit ...'
                 sh 'ng build'
@@ -11,13 +11,13 @@ pipeline {
                 sh 'ng serve --open'
             }
         }
-        stage('test'){
+        stage('Test'){
             steps {
                 echo 'Running all tests...'
                 sh 'ng test'
             }
         }
-        stage('deploy'){
+        stage('Deliver'){
             steps {
                 echo 'Deploying Travit to production'
             }
