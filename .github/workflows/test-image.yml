@@ -17,11 +17,11 @@ jobs:
           cd travit_ui
           docker build -t travit-test -f Dockerfile .
       - name: Show image builds
-      - run: |
+        run: |
           docker images
       - name: Run container
-      - run: |
+        run: |
           docker run -dp 4200:3000 travit:test
           curl localhost:4200
-          
+
         
