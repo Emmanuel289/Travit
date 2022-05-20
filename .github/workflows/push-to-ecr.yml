@@ -10,10 +10,10 @@ jobs:
       - run: echo 'This action will push the image to ECR'
       - name: Checkout repository code
         uses: actions/checkout@v2
-      - name: Build image and push to ecr
+      - name: Build image and push to ECR
         run: |
           cd travit_ui
           docker build -t travit-test .
-          docker tag travit-test 784757923335.dkr.ecr.ca-central-1.amazonaws.com/travit-test
-          docker push 784757923335.dkr.ecr.ca-central-1.amazonaws.com/travit-test
+          docker tag travit-test public.ecr.aws/q9z9h3p6/travit-ui-test
+          docker push public.ecr.aws/q9z9h3p6/travit-ui-test
 
