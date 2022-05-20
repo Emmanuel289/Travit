@@ -22,6 +22,5 @@ jobs:
       - name: Run container
         run: |
           docker run -dp 4200:3000 travit:test
-          curl localhost:4200
           
         
