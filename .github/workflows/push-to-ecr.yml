@@ -10,10 +10,14 @@ jobs:
       - run: echo 'This action will push the image to ECR'
       - name: Checkout repository code
         uses: actions/checkout@v2
+      - name: Authenticate Docker client to ECR
+        run: |
+        aws ecr-public get-login-password --region us-east-1 \
+        docker login --username AWS --password-stdin public.ecr.aws/q9z9h3p6
       - name: Build image and push to ECR
         run: |
           cd travit_ui
           docker build -t travit-test .
-          docker tag travit-test public.ecr.aws/q9z9h3p6/travit-ui-test
-          docker push public.ecr.aws/q9z9h3p6/travit-ui-test
+          docker tag travit-test:latest public.ecr.aws/q9z9h3p6/travit-ui-test:latest
+          docker push public.ecr.aws/q9z9h3p6/travit-ui-test:latest
 
