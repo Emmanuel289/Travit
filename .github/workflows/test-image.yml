@@ -13,4 +13,7 @@ jobs:
       - name: Checkout repository code
         uses: actions/@checkoutv2
       - name: Build UI image
-      - run: docker build -t travit-test -f Dockerfile .
+        run: | 
+          docker build -t travit-test -f Dockerfile .
+          docker images
+        
