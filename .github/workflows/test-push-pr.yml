@@ -1,4 +1,4 @@
-name: Validate Push and PR
+name: Test Push and PR Events
 on: [push, pull_request]
 jobs:
   Explore-GitHub-Actions:
