@@ -1,0 +1,17 @@
+name: Run UI Server
+on: 
+  pull_request
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  Run-UI-Server:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'This action will build the image for the ui and run the ui server'
+      - name: Checkout repository code
+        uses: actions/@checkoutv2
+      - name: Build UI image
+      - run: docker build -t travit-test -f Dockerfile .
