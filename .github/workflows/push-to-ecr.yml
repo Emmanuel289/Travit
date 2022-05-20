@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   push_to_ecr:
-    runs-on: ubuntu-latest:
+    runs-on: ubuntu-latest
     steps:
       - run: echo 'This action will push the image to ECR'
       - name: Checkout repository code
