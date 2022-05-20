@@ -9,19 +9,19 @@ jobs:
   run-travit-ui:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'This action will build the image for the ui and run the ui server'
+      - run: echo 'This action will test the ui container'
       - name: Checkout repository code
         uses: actions/checkout@v2
       - name: Build image
         run: | 
           cd travit_ui
-          docker build -t travit-test -f Dockerfile .
-      - name: Show image builds
-        run: |
+          docker build -t travit:test -f Dockerfile .
+      - name: Show images
+      - run: |
           docker images
       - name: Run container
-        run: |
+      - run: |
           docker run -dp 4200:3000 travit:test
           curl localhost:4200
-
+          
         
