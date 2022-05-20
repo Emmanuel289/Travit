@@ -14,5 +14,6 @@ jobs:
         run: |
           cd travit_ui
           docker build -t travit-test .
-          # docker tag travit-test name-of-ecr-repo
-          # docker push name-of-ecr-repo
+          docker tag travit-test 784757923335.dkr.ecr.ca-central-1.amazonaws.com/travit-test
+          docker push 784757923335.dkr.ecr.ca-central-1.amazonaws.com/travit-test
+
