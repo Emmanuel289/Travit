@@ -1,23 +1,20 @@
 name: Run UI Server
 on:
   pull_request:
-
 jobs:
   run-travit-ui:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'This action will test the ui container'
       - name: Checkout repository code
         uses: actions/checkout@v2
       - name: Build image
         run: | 
           cd travit_ui
-          docker build -t travit:test -f Dockerfile .
-      - name: Show images
-        run: |
+          docker build -t travit-ui-test -f Dockerfile .
+          echo 'Displaying images'
           docker images
       - name: Run container
         run: |
-          docker run -dp 4200:3000 travit:test
+          docker run -dp 4200:3000 travit-ui-test
           
         
