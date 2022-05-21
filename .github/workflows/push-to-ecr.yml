@@ -9,10 +9,11 @@ jobs:
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v2
-      - name: Login to ECR
-        run: aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 784757923335.dkr.ecr.ca-central-1.amazonaws.com
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v1
       - name: Build, tag, and push image to Amazon ECR
         run: |
+          aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 784757923335.dkr.ecr.ca-central-1.amazonaws.com
           cd travit_ui
           docker build -t travit-ui-test .
           docker tag travit-ui-test:latest 784757923335.dkr.ecr.ca-central-1.amazonaws.com/travit-ui-test:latest
