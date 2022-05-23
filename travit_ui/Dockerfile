@@ -1,12 +1,6 @@
 ## Base confuguration section
 # Extending image
-FROM node:12-stretch
-
-# Install tools
-RUN apt-get update && apt-get install -y \
-    git \
-    bash
-
+FROM node:12-stretch as intermediate
 
 # Do something like in all tutorials
 VOLUME /root/.npm
@@ -36,8 +30,17 @@ COPY . .
 ENV PORT 3000
 EXPOSE $PORT
 # Compile static files
-RUN npm run-script build
+RUN npm run-script build && \
+    rm -rf node_modules && \
+    rm package*.json
 
+FROM node:12-stretch as final
+WORKDIR /usr/app/src
+# Install tools
+RUN apt-get update && apt-get install -y \
+    git \
+    bash
+COPY --from=intermediate /usr/src/app/dist/travit /usr/app/src/dist/travit
 ## Run static bundle on a server
 # Install package for runnning a server
 RUN npm i -g http-server
