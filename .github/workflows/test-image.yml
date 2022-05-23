@@ -15,6 +15,6 @@ jobs:
           docker images
       - name: Run container
         run: |
-          docker run -dp 4200:3000 travit-ui-test
+          docker run -dp 3000:3000 travit-ui-test
           
         

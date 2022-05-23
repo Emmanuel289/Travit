@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travit
+  labels:
+    app: travit
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: travit
+  template:
+    metadata:
+      labels:
+        app: travit
+    spec:
+      containers:
+      - name: travit-ui
+        image: public.ecr.aws/q9z9h3p6/travit-ui-test
+        ports:
+        - containerPort: 3000
+
+          
