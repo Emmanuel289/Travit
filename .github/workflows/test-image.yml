@@ -14,9 +14,9 @@ jobs:
         with:
           filters: |
             backend: 
-              - './travit_backend/'
+              - './travit_backend/**'
             frontend:
-              - './travit_ui/'
+              - './travit_ui/**'
       - name: Test on backend
         if: steps.working-directory.outputs.backend == 'true'
         run: echo 'This is the backend folder'
