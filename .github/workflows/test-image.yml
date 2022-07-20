@@ -1,6 +1,8 @@
 name: Run UI Server
 on:
   pull_request:
+  push:
+    branches: 'develop'
 jobs:
   run-travit-ui:
     runs-on: ubuntu-latest
