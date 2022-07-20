@@ -1,6 +1,6 @@
-## Base confuguration section
+## Base configuration section
 # Extending image
-FROM node:12-stretch as intermediate
+FROM node:12-stretch-slim as intermediate
 
 # Do something like in all tutorials
 VOLUME /root/.npm

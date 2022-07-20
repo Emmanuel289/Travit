@@ -14,22 +14,22 @@ jobs:
         id: working-directory
         with:
           filters: |
-            backend: 
+            backend_dir: 
               - './travit_backend/*'
-            frontend:
+            frontend_dir:
               - './travit_ui/*'
-            workflows:
+            workflows_dir:
               - '.github/workflows/*'
       - name: Test on backend
-        if: steps.working-directory.outputs.backend == 'true'
+        if: steps.working-directory.outputs.backend_dir == 'true'
         run: echo 'This is the backend folder'
 
       - name: Test on frontend
-        if: steps.working-directory.outputs.frontend == 'true'
+        if: steps.working-directory.outputs.frontend_dir == 'true'
         run: echo 'This is the frontend folder'
 
       - name: Test on workflows
-        if: ${{ steps.working-directory.outputs.workflow}} == 'true'
+        if: ${{ steps.working-directory.outputs.workflow_dir}} == 'true'
         run: echo 'This is the workflow folder'
 
       - name: Build image
