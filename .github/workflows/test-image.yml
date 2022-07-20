@@ -21,11 +21,11 @@ jobs:
             workflows_dir:
               - '.github/workflows/*'
       - name: Test on backend
-        if: {{ steps.working-directory.outputs.backend_dir }} == 'true'
+        if: ${{ steps.working-directory.outputs.backend_dir }} == 'true'
         run: echo 'This is the backend folder'
 
       - name: Test on frontend
-        if: {{ steps.working-directory.outputs.frontend_dir }} == 'true'
+        if: ${{ steps.working-directory.outputs.frontend_dir }} == 'true'
         run: echo 'This is the frontend folder'
 
       - name: Test on workflows
