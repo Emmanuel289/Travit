@@ -22,7 +22,7 @@ jobs:
         run: echo 'This is the backend folder'
 
       - name: Test on frontend
-        if: steps.working-directory.outputs.frontend == 'true':
+        if: steps.working-directory.outputs.frontend == 'true'
         run: echo 'This is the frontend folder'
 
       - name: Build image
