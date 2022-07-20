@@ -1,13 +1,12 @@
 name: Run UI Server
 on:
   pull_request:
+  push:
+    branches: 'develop'
 jobs:
   run-travit-ui:
     runs-on: ubuntu-latest
     steps:
-      outputs: 
-        backend: ${{ steps.working-directory.outputs.backend }}
-        frontend: ${{ steps.output.working-directory.outputs.frontend}}
       - name: Checkout repository code
         uses: actions/checkout@v2
       - uses: dorny/paths-filter@v2
@@ -15,16 +14,22 @@ jobs:
         with:
           filters: |
             backend: 
-              - 'travit_backend'
+              - './travit_backend/*'
             frontend:
-              - 'travit_ui'
+              - './travit_ui/*'
+            workflows:
+              - '.github/workflows/*'
       - name: Test on backend
         if: steps.working-directory.outputs.backend == 'true'
         run: echo 'This is the backend folder'
 
       - name: Test on frontend
-        if: steps.working-directory.outputs.frontend == 'true':
+        if: steps.working-directory.outputs.frontend == 'true'
         run: echo 'This is the frontend folder'
+
+      - name: Test on workflows
+        if: ${{ steps.working-directory.outputs.workflow}} == 'true'
+        run: echo 'This is the workflow folder'
 
       - name: Build image
         run: | 
