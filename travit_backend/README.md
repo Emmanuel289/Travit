@@ -1,1 +1,1 @@
-This directory will host the backend codebase for resolving client-side queries to Travit.
+This directory will host the backend codebase for servicing client-side queries 
