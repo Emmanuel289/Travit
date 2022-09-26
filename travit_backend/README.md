@@ -1,1 +1,1 @@
-This folder will host the backend components for handling client-side requests to Travit
+This directory will host the backend codebase for servicing client-side queries to Travit

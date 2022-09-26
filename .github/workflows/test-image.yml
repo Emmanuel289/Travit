@@ -2,7 +2,8 @@ name: Run UI Server
 on:
   pull_request:
   push:
-    branches: 'develop'
+    branches:
+      - develop
 jobs:
   run-travit-ui:
     runs-on: ubuntu-latest
@@ -13,26 +14,26 @@ jobs:
         id: working-directory
         with:
           filters: |
-            backend: 
+            backend_dir:
               - './travit_backend/*'
-            frontend:
+            frontend_dir:
               - './travit_ui/*'
-            workflows:
+            workflows_dir:
               - '.github/workflows/*'
       - name: Test on backend
-        if: steps.working-directory.outputs.backend == 'true'
+        if: ${{ steps.working-directory.outputs.backend_dir }} == 'true'
         run: echo 'This is the backend folder'
 
       - name: Test on frontend
-        if: steps.working-directory.outputs.frontend == 'true'
+        if: ${{ steps.working-directory.outputs.frontend_dir }} == 'true'
         run: echo 'This is the frontend folder'
 
       - name: Test on workflows
-        if: ${{ steps.working-directory.outputs.workflow}} == 'true'
+        if: ${{ steps.working-directory.outputs.workflows_dir}} == 'true'
         run: echo 'This is the workflow folder'
 
       - name: Build image
-        run: | 
+        run: |
           cd travit_ui
           docker build -t travit-ui-test -f Dockerfile .
           echo 'Displaying images'
@@ -40,5 +41,5 @@ jobs:
       - name: Run container
         run: |
           docker run -dp 3000:3000 travit-ui-test
-          
-        
+
+
