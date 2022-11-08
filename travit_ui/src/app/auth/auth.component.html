@@ -1,0 +1,28 @@
+<form class="login">
+
+    <h1 style="font-size: 25px" class="login">Log in</h1>
+
+    <div class="login">
+        <div>
+            <input type="text" id="lbUserName" name="lbUserName" minlength="8" required placeholder="Email">
+        </div>
+
+        <br/>
+
+        <div>
+            <input type="password" id="lblPassword" name="lblPassword" placeholder="Password">
+        </div>
+        <br />
+        <div>
+            <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+                <input type="button" id="logout"  name="logout" value="Log out" (click)="auth.logout({ returnTo: document.location.origin })">
+            </ng-container>
+        </div>
+        
+          <ng-template #loggedOut>
+            <input type="button" id="login"  name="login" value="Log in" (click)="auth.loginWithRedirect()">
+          </ng-template>
+    </div>
+
+
+</form>
