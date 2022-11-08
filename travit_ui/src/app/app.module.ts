@@ -8,13 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Authentication Module from auth0
 import { AuthModule } from '@auth0/auth0-angular';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthButtonComponent,
-    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
