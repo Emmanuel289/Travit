@@ -2,5 +2,4 @@ travit_ui/node_modules
 travit_ui/dist/
 travit_ui/.gitignore
 travit_ui/yarn.lock
-.firebaserc 
-package-lock.json
+.firebaserc
