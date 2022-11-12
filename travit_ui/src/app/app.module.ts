@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthButtonComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/auth.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Authentication Module from auth0
@@ -12,7 +12,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthButtonComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

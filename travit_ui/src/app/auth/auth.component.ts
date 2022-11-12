@@ -5,11 +5,11 @@ import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'app-login-button',
+  selector: 'app-login',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
-export class AuthButtonComponent {
+export class LoginComponent {
 
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
 
