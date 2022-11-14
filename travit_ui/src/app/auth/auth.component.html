@@ -1,4 +1,7 @@
-<form class="login">
+<div class="header-text">
+    <h1> Sign in to Travit</h1>
+</div>
+<form>
     <div class="login">
         <div>
             <input class="login-email" type="text" id="lbUserName" name="lbUserName" minlength="8" required placeholder="Email">
@@ -19,9 +22,6 @@
             <ng-template #loggedOut>
                 <input class="sign-in-btn" type="button" id="signin"  name="login" value="Sign In" (click)="auth.loginWithRedirect()">
               </ng-template>
-        </div>
-          
+        </div>      
     </div>
-
-
 </form>

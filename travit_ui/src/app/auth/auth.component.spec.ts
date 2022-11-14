@@ -27,9 +27,15 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create the login component', () => {
+  it(`should create the login component`, () => {
     expect(component).toBeTruthy();
   });
+
+  it (`should display message to sign in`, () => {
+    const fixture = TestBed.createComponent(LoginComponent);
+    const messageElem = fixture.nativeElement.querySelector(`.header-text`);
+    expect (messageElem.textContent?.trim()).toEqual('Sign in to Travit')
+  })
   
   it(`should display login form with input fields`, () => {
     const fixture = TestBed.createComponent(LoginComponent);
