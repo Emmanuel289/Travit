@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AuthModule } from '@auth0/auth0-angular';
-import { LoginComponent } from './auth/auth.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -33,10 +32,11 @@ describe('AppComponent', () => {
   });
 
 
-  it(`should display Travit and welcome message`, () => {
+  it(`should contain a toolbar`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const compiled = fixture.nativeElement as HTMLElement;
-    expect (compiled.querySelector('h1')?.textContent).toContain('Travit')
-    expect (compiled.querySelector('h2')?.textContent).toContain('Personalize your travel experience');
-  })
+    expect (compiled.querySelector('.toolbar')).toBeTruthy();
+    expect ( compiled.querySelector('.sign-in')?.textContent?.trim()).toEqual('Sign In')
+  });
+
 });
