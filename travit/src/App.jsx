@@ -1,34 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import * as React from 'react';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const title = 'Travit';
 
+const actions = [
+  {
+    id: 1,
+    action: 'Sign up',
+    url: '/signup',
+  },
+  {
+    id: 2,
+    action: 'Log in',
+    url: '/login',
+  },
+  {
+    id: 3,
+    action: 'Book a trip',
+    url: '/book-a-trip',
+  },
+]
+
+
+const App = () => {
+  
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <h1 className="display-welcome-title">Welcome to {title}</h1>
+      <h2 className="display-welcome-message"> Personalize your travel experience and connect with travellers in your community</h2>
+      <Search />
+      <hr />
+      <Actions/>
+      
     </div>
-  )
+  );
+}
+
+const Actions =() => {
+  return (
+    <ul>
+      {actions.map(
+        (item) => 
+        <li key={item.id}>
+          <span>
+            <a href={item.url}>{item.action}</a>
+          </span>
+        </li>
+      )}
+    </ul>
+  );
+}
+
+
+const Search = () => {
+  const handleChange = (event) => {
+    // synthetic event
+    console.log(event);
+    // value of target (here: input HTML event)
+    console.log(event.target.value);
+  }
+  return (
+    <div>
+      <label htmlFor='search'>Search: </label>
+      <input id="search" type="text" onChange={handleChange} />
+    </div>
+  );
 }
 
 export default App
