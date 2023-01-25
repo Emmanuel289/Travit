@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/travit",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
