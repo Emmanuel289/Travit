@@ -1,0 +1,6 @@
+.div.sign-up {
+    display: inline-block;
+    flex: 1;
+    text-align: right;
+    background-color: white;
+}
