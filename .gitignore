@@ -1,5 +1,5 @@
-ui/node_modules
-ui/dist/
-ui/.gitignore
-ui/yarn.lock
+travit/node_modules
+travit/dist/
+travit/.gitignore
+travit/yarn.lock
 .firebaserc

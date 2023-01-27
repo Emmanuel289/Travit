@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './App.css';
-import { Actions } from './components/actions/actions';
-import { Search } from './components/search/search';
+import { NavBar } from './components/navbar/navbar';
+import { ImageSlider } from './components/slider/image_slider';
+import { ImageList } from './components/slider/image_list';
 
 const title = 'Travit';
 
@@ -9,35 +10,23 @@ const title = 'Travit';
 
 const App = () => {
 
-  const actions = [
-    {
-      id: 1,
-      action: 'Sign up',
-      url: '/signup',
-    },
-    {
-      id: 2,
-      action: 'Log in',
-      url: '/login',
-    },
-    {
-      id: 3,
-      action: 'Book a trip',
-      url: '/book-a-trip',
-    },
-  ]
+  const containerStyles = {
+    width: "500px",
+    height: "280px",
+    position: "0 auto"
+  }
   
   return (
     <div>
-      <div class="toolbar" role="banner">
+      <div className="root" role="main">
       </div>
-      <div class="content" role="main">
-      </div>
+      <NavBar />
       <h1 className="display-welcome-title">Welcome to {title}</h1>
       <h2 className="display-welcome-message"> Personalize your travel experience and connect with travellers in your community</h2>
-      <Search />
-      <hr />
-      <Actions actions={actions}/>
+      
+      <section style={containerStyles}>
+        <ImageSlider slides={ImageList}/>
+      </section>
       
     </div>
   );
