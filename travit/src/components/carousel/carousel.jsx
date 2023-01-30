@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSnapCarousel } from 'react-snap-carousel';
-import { images } from '../../assets/images/images';
+import { images } from '../../assets/images/yyc.jsx';
 
 
 const PictureSlider = () => {
