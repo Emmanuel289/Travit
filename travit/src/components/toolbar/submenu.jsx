@@ -15,7 +15,7 @@ const SidebarLink = styled(Link)`
  
   &:hover {
     background: blue;
-    border-left: 4px solid green;
+    border-left: 4px;
     cursor: pointer;
   }
 `;
