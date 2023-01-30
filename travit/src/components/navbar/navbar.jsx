@@ -5,8 +5,13 @@ import './navbar.css';
 function NavBar() {
 
     return (
-    <div className="toolbar" role="banner">
-    </div>
+        <div className="navbar">
+            <a href="/">Home</a> 
+            <a href="/about">About</a> 
+            <a href="/contact">Contact</a> 
+            <a href="/sign-in">Sign In</a>
+            <a href="/sign-up">Sign Up</a>
+        </div>
     );
 }
 
