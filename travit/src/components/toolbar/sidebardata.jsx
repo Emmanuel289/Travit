@@ -7,24 +7,21 @@ import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
     {
-      title: "About Us",
+      title: "Home",
       path: "/home",
       icon: <AiIcons.AiFillHome />,
       iconClosed: <RiIcons.RiArrowDownSFill />,
       iconOpened: <RiIcons.RiArrowUpSFill />,
-   
-      subNav: [
-        {
-          title: "Our Aim",
-          path: "/home/aim",
-          icon: <IoIcons.IoIosPaper />,
-        },
-        {
-          title: "Our Vision",
-          path: "/home/vision",
-          icon: <IoIcons.IoIosPaper />,
-        },
-      ],
+    },
+    {
+      title: "SignIn",
+      path: "/signin",
+      icon: <AiIcons.AiFillLock />,
+    },
+    {
+      title: "SignUp",
+      path: "/signup",
+      icon: <AiIcons.AiFillPlusCircle/>,
     },
     {
       title: "Contact",

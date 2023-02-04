@@ -12,19 +12,20 @@ const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: right;
 `;
 
 const NavIcon = styled(Link)`
   margin-left: 1rem;
   font-size: 1rem;
-  height: 60px;
+  height: 40px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-right;
   align-items: center;
 `;
  
 const SidebarNav = styled.nav`
-  width: 200px;
+  width: 100px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -33,7 +34,7 @@ const SidebarNav = styled.nav`
   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
   transition: 350ms;
   z-index: 10;
-  background-color: black;
+  background-color:  rgb(22, 52, 172);
 `;
  
 const SidebarWrap = styled.div`
@@ -51,13 +52,7 @@ const Sidebar = () => {
               <NavIcon to="#">
                 <FaIcons.FaBars onClick={showSidebar} />
               </NavIcon>
-              <h1
-                style={{ textAlign: "center",
-                         marginLeft: "50px",
-                         color: "white" }}
-              >
-                Travit
-              </h1>
+              <span style={{ textAlign: "right", marginLeft: "200px", color: "white" }}>Travit</span>
             </Nav>
             <SidebarNav sidebar={sidebar}>
               <SidebarWrap>
