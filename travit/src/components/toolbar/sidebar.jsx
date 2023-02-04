@@ -25,7 +25,7 @@ const NavIcon = styled(Link)`
 `;
  
 const SidebarNav = styled.nav`
-  width: 100px;
+  width: 150px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@ const Sidebar = () => {
               <NavIcon to="#">
                 <FaIcons.FaBars onClick={showSidebar} />
               </NavIcon>
-              <span style={{ textAlign: "right", marginLeft: "200px", color: "white" }}>Travit</span>
+              <span style={{ textAlign: "right", marginLeft: "100px", color: "white" }}>Travit</span>
             </Nav>
             <SidebarNav sidebar={sidebar}>
               <SidebarWrap>
@@ -68,6 +68,5 @@ const Sidebar = () => {
         </>
       );
     };
-
+    
 export { Sidebar };
-
