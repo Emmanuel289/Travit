@@ -1,4 +1,10 @@
-.beltline-1{
-    width: 800px;
-    height: 400px;
+.owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    display: 'flex';
+    background-color: #fff;
+    -webkit-backface-visibility: visible;
+    border-radius: 30px;
+    cursor: pointer;
 }
