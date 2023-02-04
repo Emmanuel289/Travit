@@ -12,8 +12,8 @@ const App = () => {
     <div>
       <div className="root" role="main">
       </div>
-      <ToolBar />
-      <h1 className="display-welcome-message">Travit enriches your travel experience</h1> 
+      <ToolBar /> 
+      <h1 className="display-welcome-message">Travit enriches your travel experience</h1>
       <Carousel images={images} />
       <Content />
       <Footer/> 

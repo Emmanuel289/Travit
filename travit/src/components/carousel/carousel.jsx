@@ -12,9 +12,9 @@ const Carousel = ({ images }) => {
     
   };
   return (
-    <div className='image-slider'>
-        <div>{images[currentIndex]}</div>
-        
+    <div>
+        <div className='image-slider'>{images[currentIndex]} 
+        </div>
          <div className="owl-dots"  style={{justifyContent: 'center', margin: '0 3 px', display: 'flex'}}>
           {images.map((image, index) => {
             return (

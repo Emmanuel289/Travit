@@ -1,7 +1,7 @@
 
 const style = {
-    width: '350px',
-    height: '350px',
+    width: '400px',
+    height: '400px',
     display: 'flex',
     margin: '0 auto',
     backgroundSize: 'cover',
