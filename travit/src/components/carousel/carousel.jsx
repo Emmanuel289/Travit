@@ -7,14 +7,12 @@ const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const loadImage = (index) => {
-    setCurrentIndex(index);
-    
-    
+    setCurrentIndex(index);  
   };
+  
   return (
     <div>
-        <div className='image-slider'>{images[currentIndex]} 
-        </div>
+        <div className='image-slider'>{images[currentIndex]}</div>
          <div className="owl-dots"  style={{justifyContent: 'center', margin: '0 3 px', display: 'flex'}}>
           {images.map((image, index) => {
             return (
@@ -23,7 +21,6 @@ const Carousel = ({ images }) => {
           })}
         </div>
     </div>
-   
   )
 };
 

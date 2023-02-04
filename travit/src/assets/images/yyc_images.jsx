@@ -6,8 +6,6 @@ const style = {
     margin: '0 auto',
     backgroundSize: 'cover',
     borderRadius: '10px'
-
-    
 }
 
 export const images = [
