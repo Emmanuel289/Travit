@@ -16,7 +16,6 @@ const App = () => {
       <h1 className="display-welcome-message">Travit enriches your travel experience</h1> 
       <Carousel images={images} />
       <Content />
-      <Footer/> 
     </div>
   );
 }
