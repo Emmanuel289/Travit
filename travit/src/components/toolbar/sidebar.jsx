@@ -31,10 +31,10 @@ const SidebarNav = styled.nav`
   justify-content: center;
   position: fixed;
   top: 0;
-  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
+  right: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
   transition: 350ms;
   z-index: 10;
-  background-color:  rgb(22, 52, 172);
+  background-color:  #0053db;
 `;
  
 const SidebarWrap = styled.div`
@@ -50,9 +50,9 @@ const Sidebar = () => {
           <IconContext.Provider value={{ color: "#fff" }}>
             <Nav>
               <NavIcon to="#">
-                <FaIcons.FaBars onClick={showSidebar} />
+                <FaIcons.FaBars  style={{ position: "absolute", right: "15px"}} onClick={showSidebar} />
               </NavIcon>
-              <span style={{ textAlign: "right", marginLeft: "100px", color: "white" }}>Travit</span>
+              <span style={{ textAlign: "center", marginLeft: "100px", color: "white" }}>Travit</span>
             </Nav>
             <SidebarNav sidebar={sidebar}>
               <SidebarWrap>
