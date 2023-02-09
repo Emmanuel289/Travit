@@ -1,8 +1,8 @@
 .owl-dots .owl-dot {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin: 5px;
-    display: 'flex';
+    display: flex;
     background-color: #fff;
     -webkit-backface-visibility: visible;
     border-radius: 10px;

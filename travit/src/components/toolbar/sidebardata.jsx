@@ -14,12 +14,12 @@ export const SidebarData = [
       iconOpened: <RiIcons.RiArrowUpSFill />,
     },
     {
-      title: "SignIn",
+      title: "Sign in",
       path: "/signin",
       icon: <AiIcons.AiFillLock />,
     },
     {
-      title: "SignUp",
+      title: "Sign up",
       path: "/signup",
       icon: <AiIcons.AiFillPlusCircle/>,
     },

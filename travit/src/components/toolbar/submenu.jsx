@@ -7,11 +7,11 @@ const SidebarLink = styled(Link)`
   color: #e1e9fc;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 22px;
   list-style: none;
   height: 30px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 12px;
  
   &:hover {
     background: blue;
