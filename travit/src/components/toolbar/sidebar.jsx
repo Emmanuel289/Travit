@@ -48,9 +48,7 @@ const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => {
-      setTimeout(() => {
-        setSidebar(!sidebar);
-      }, 250);
+      setSidebar(!sidebar);
     }
 
     return (
