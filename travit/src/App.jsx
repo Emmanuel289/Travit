@@ -3,7 +3,6 @@ import './App.css';
 import { ToolBar }  from './components/toolbar/toolbar';
 import { Carousel } from './components/carousel/carousel';
 import { Content } from './components/cards/cards.jsx';
-import { Footer } from './components/footer/footer';
 import { images } from './assets/images/yyc_images.jsx';
 
 const App = () => {
