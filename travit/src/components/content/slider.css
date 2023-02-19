@@ -1,3 +1,16 @@
+.image-slider {
+    top: 10px;
+    bottom: 10px;
+    background-color: #0d6efd;
+    color: black;
+}
+
+.owl-dots {
+    display: flex;
+    justify-content: center;
+    margin: auto;   
+}
+
 .owl-dots .owl-dot {
     width: 15px;
     height: 15px;
@@ -8,8 +21,5 @@
     border-radius: 10px;
     cursor: pointer;
 }
-.image-slider {
-    top: 10px;
-    background-color: #0d6efd;
-    color: black;
-}
+
+

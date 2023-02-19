@@ -1,8 +1,8 @@
 import { React, useState} from 'react';
-import './carousel.css';
+import './slider.css';
 
 
-const Carousel = ({ images }) => {
+const Slider = ({ images }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -13,7 +13,7 @@ const Carousel = ({ images }) => {
   return (
     <div>
         <div className='image-slider'>{images[currentIndex]}</div>
-         <div className="owl-dots"  style={{justifyContent: 'center', margin: '0 3 px', display: 'flex'}}>
+         <div className="owl-dots" >
           {images.map((image, index) => {
             return (
               <button key={index} role="button" className="owl-dot" tabIndex="0" onClick={() => loadImage(index)}><span></span></button>
@@ -24,4 +24,4 @@ const Carousel = ({ images }) => {
   )
 };
 
-export { Carousel };
+export { Slider };
