@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 50px;
     display: inline-block;
     align-items: center;
     background-color:  #0d6efd;
@@ -13,7 +13,9 @@
   }  
 
 .toolbar.home,
-.toolbar.contact{
+.toolbar.contact
+.toolbar.signup 
+.toolbar.signin {
   background-color: inherit;
   display: flex;
   margin-left: 260px;
