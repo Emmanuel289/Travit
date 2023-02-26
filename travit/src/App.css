@@ -25,14 +25,3 @@
   padding: 0;
   
 }
-.home,
-.services,
-.reports,
-.contact,
-.support {
-  display: flex;
-  margin-left: 260px;
-  text-align: center;
-  font-size:large;
-  font-family: inherit
-}
