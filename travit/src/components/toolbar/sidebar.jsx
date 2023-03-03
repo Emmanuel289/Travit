@@ -1,47 +1,12 @@
 import { React, useState } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './sidebardata';
 import { SubMenu } from './submenu';
 import { IconContext} from 'react-icons/lib';
 
-const Nav = styled.div`
-  height: 40px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: right;
-`;
-
-const NavIcon = styled(Link)`
-  margin-left: 1rem;
-  font-size: 1.5rem;
-  height: 40px;
-  display: flex;
-  justify-content: flex-right;
-  align-items: center;
-  position: absolute;
-  right: 15px;
-`;
- 
-const SidebarNav = styled.nav`
-  width: 150px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-  transition: 400ms;
-  z-index: 10;
-  background-color:  #0053db;
-`;
- 
-const SidebarWrap = styled.div`
-  width: 100%;
-`;
+const title = 'Travit';
 
 const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false);
@@ -50,21 +15,38 @@ const Sidebar = () => {
       setSidebar(!sidebar);
     }
 
+    const sidebarNavStyle = {
+      width: '150px',
+      height: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'fixed',
+      top: 0,
+      left: sidebar ? "0": "-100%",
+      transition: '400ms',
+      zIndex: 10,
+      backgroundColor: '#0053db',
+    }
+
     return (
         <>
           <IconContext.Provider value={{ color: "#fff" }}>
-            <Nav>
-              <NavIcon to="#">
+            <div className="title">{title}</div>
+            <div className="nav">
+              <NavLink className="nav-link" to="#">
                 {<div>{sidebar ? <AiIcons.AiOutlineClose  onClick={showSidebar} />: <FaIcons.FaBars onClick={showSidebar} />}</div>}
-              </NavIcon>
-            </Nav>
-            <SidebarNav sidebar={sidebar}>
-              <SidebarWrap>
+              </NavLink>
+            </div>
+            <nav 
+              className="sidebar" 
+              style={sidebarNavStyle}
+              >
+              <div className="sidebar-wrap">
                 {SidebarData.map((item, index) => {
                   return <SubMenu item={item} key={index} />;
                 })}
-              </SidebarWrap>
-            </SidebarNav>
+              </div>
+            </nav>
           </IconContext.Provider>
         </>
       );
