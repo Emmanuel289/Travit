@@ -120,7 +120,7 @@ function Content() {
   return (
   <div className="content" >
     <div className="box" style={styles.box}>
-      <h2 style={{textAlign: 'center'}}>Travit Enriches Your Travel Experience</h2>
+      <h2 style={{textAlign: 'center'}}>Enrich Your Travel Experience</h2>
       <div className="grid-container" style={styles.grid}>
         <div className="grid bg1" style={styles['grid bg1']}>
           <h2>Create an Account</h2>
