@@ -11,11 +11,11 @@ function Content() {
       </div>
       <div className="grid bg2">
         <h2>Relevant Information</h2>
-        <span><p>Save time on researching destinations and get all the information you need in one place</p></span>
+        <span><p>Save time on researching destinations and get all the information you need</p></span>
       </div>
       <div className="grid bg3">
         <h2>Get the Best Deals</h2>
-        <span><p>Find the best deals on flights, hotels, and other leisure activities in your location.</p></span>
+        <span><p>Find the best deals on flights, hotels, and other leisure activities in your location</p></span>
       </div>
       <div className="grid bg4">
         <h2>Engage With The Community</h2>
