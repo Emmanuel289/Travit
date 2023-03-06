@@ -1,9 +1,12 @@
 import './content.css';
+
 function Content() {
 
   return (
     <div className="container">
-      <h3>Enrich Your Travel Experience</h3>
+      <hr />
+      <h2>Enrich Your Travel Experience</h2>
+      <hr />
     <div className="wrapper">
       <div className="grid bg1">
         <h3>Travel Recommendations</h3>
