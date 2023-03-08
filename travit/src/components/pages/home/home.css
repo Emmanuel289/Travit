@@ -1,7 +1,16 @@
+.header-text {
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+.headline {
+  color: black;
+}
+
 .wrapper {
   display: flex;
   grid-gap: 30px;
-  grid-auto-rows: minmax(60px, auto);
   width: auto;
   position: relative;
 }
