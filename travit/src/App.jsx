@@ -1,19 +1,13 @@
 import * as React from 'react';
 import './App.css';
-import { ToolBar }  from './components/toolbar/toolbar';
-import { Content } from './components/content/content.jsx';
-import { Slider } from './components/content/slider';
-import { images } from './assets/images/yyc_images';
-
+import { PageRouter }  from './components/router/pages.routes';
 const App = () => {
   
   return (
     <div>
       <div className="root" role="main">
       </div>
-      <ToolBar />
-      <Slider images={images} />
-      <Content />
+      <PageRouter />
     </div>
   );
 }
