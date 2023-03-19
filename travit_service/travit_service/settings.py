@@ -43,7 +43,12 @@ LOCAL_APPS = [
     'users',
 ]
 
-INSTALLED_APPS = CORE_APPS + LOCAL_APPS
+# Third-party apps
+THIRD_PARTY_APPS = [
+    'rest_framework',
+]
+
+INSTALLED_APPS = CORE_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
