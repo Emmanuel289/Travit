@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Sidebar } from './sidebar';
 import { Home } from '../pages/home/home';
 import { Contact } from "../pages/contact";
-import { SignIn, SignUp } from '../pages/auth';
+import { SignUp } from '../pages/signup';
+import { SignIn } from '../pages/signin'
 
 
 

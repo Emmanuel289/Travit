@@ -3,3 +3,7 @@ travit/dist/
 travit/.gitignore
 travit/yarn.lock
 .firebaserc
+
+__pycache__/
+virtualenv
+db.sqlite3
