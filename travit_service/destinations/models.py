@@ -12,5 +12,8 @@ class Destination(models.Model):
     timezone = models.CharField(
         verbose_name="Timezone", max_length=50, default=timezone.get_current_timezone_name())
 
+    class Meta:
+        app_label = "destinations"
+
     def __str__(self):
         return f'Destination(id={self.id}, name={self.name})'

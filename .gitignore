@@ -7,3 +7,8 @@ travit/yarn.lock
 __pycache__/
 virtualenv
 db.sqlite3
+
+# Infra cache and state files
+travit_service/infra/.terraform
+travit_service/infra/.terraform.lock.hcl
+travit_service/infra/terraform.tf*
