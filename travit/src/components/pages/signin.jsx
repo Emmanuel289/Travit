@@ -44,7 +44,7 @@ export const SignIn = () => {
             const source = Axios.CancelToken.source();
             async function SignIn() {
                 try {
-                    const response = await Axios.post('http://localhost:8000/api-auth-djoser/token/login/', 
+                    const response = await Axios.post('http://ec2-15-222-248-158.ca-central-1.compute.amazonaws.com:3000/api-auth-djoser/token/login/', 
                     {
                         username: state.usernameValue, 
                         password: state.passwordValue
@@ -73,7 +73,7 @@ export const SignIn = () => {
             const source = Axios.CancelToken.source();
             async function GetUserInfo() {
                 try {
-                    const response = await Axios.get('http://localhost:8000/api-auth/users/me/', 
+                    const response = await Axios.get('http://ec2-15-222-248-158.ca-central-1.compute.amazonaws.com:3000/api-auth/users/me/', 
                     {
                         headers: {Authorization : 'Token '.concat(state.token)}
                     }, 
