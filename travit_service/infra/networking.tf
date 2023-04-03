@@ -6,10 +6,11 @@ module "vpc" {
   name = "${var.name}-vpc"
   cidr = var.vpc_cidr
 
-  azs = ["${var.aws_region}a"]
+  azs = ["${var.aws_region}a", "${var.aws_region}b"]
 
   public_subnets = [
-    cidrsubnet(var.vpc_cidr, 0, 0)
+    cidrsubnet(var.vpc_cidr, 4, 0),
+    cidrsubnet(var.vpc_cidr, 4, 1),
   ]
   private_subnets = []
 
@@ -32,7 +33,15 @@ resource "aws_security_group" "travit_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${chomp(data.http.myip.body)}/32"]
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
+  }
+
+  # Restrict after testing
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {

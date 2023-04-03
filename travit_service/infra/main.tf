@@ -27,7 +27,7 @@ resource "aws_instance" "travit_svc_instance" {
   }
 }
 
-resource "null_resource" "deps_install" {
+resource "null_resource" "travit_svc_config" {
   depends_on = [aws_instance.travit_svc_instance]
 
   provisioner "file" {
