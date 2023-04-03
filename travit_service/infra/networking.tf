@@ -36,12 +36,20 @@ resource "aws_security_group" "travit_sg" {
     cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
   }
 
-  # Restrict after testing
   ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    description = "Nginx service"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
+  }
+
+  ingress {
+    description = "Dev server"
+    from_port   = 8000
+    to_port     = 8000
+    protocol    = "tcp"
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
   }
 
   egress {

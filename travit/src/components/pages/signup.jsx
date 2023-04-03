@@ -32,7 +32,7 @@ export const SignUp = () => {
             async function SignUp(){
                 try {
                     const response = await Axios.post(
-                        'http://localhost:8000/api-auth-djoser/users/', 
+                        'http://ec2-15-222-248-158.ca-central-1.compute.amazonaws.com:3000/api-auth-djoser/users/', 
                         {
                             username: usernameValue,
                             email: emailValue,
