@@ -45,7 +45,7 @@ variable "subnet_id" {
 }
 
 variable "vpc_cidr" {
-  default     = "10.0.0.0/24"
+  default     = "10.0.0.0/20"
   description = "VPC CIDR range"
 }
 
@@ -62,4 +62,12 @@ variable "disk_size" {
 variable "key_file" {
   default     = "~/.ssh/travit-svc-key.pem"
   description = "Path to private key file"
+}
+
+
+variable "db_password" {
+  type        = string
+  default     = ""
+  description = "Database password"
+  sensitive   = true
 }
