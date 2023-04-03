@@ -8,7 +8,7 @@ class User(AbstractUser):
         verbose_name="Username", blank=False, max_length=20, unique=True)
     email = models.EmailField(verbose_name="Email", blank=False, unique=True)
     password = models.CharField(
-        verbose_name='Password', blank=False, max_length=40)
+        verbose_name='Password', blank=False, max_length=20)
 
     class Meta:
         ordering = ['id']
