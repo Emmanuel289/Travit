@@ -101,7 +101,7 @@ export const SignUp = () => {
             <form className="container" onSubmit={handleFormSubmit}>
                 <FormField className="formfield">
                     <label className="label" htmlFor="name">
-                        UserName
+                        Username
                     </label>
                     <input className="input" name="name" value={usernameValue} onChange={handleChangeUserName}></input>
                 </FormField>
