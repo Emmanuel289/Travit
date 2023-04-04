@@ -14,9 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: 'Install Pip'
-      run: |
-        cd travit_service
-        sudo apt-get install python3-pip
+    - run: sudo apt-get install python3-pip
     - name: Install Virtualenv
       run: pip3 install virtualenv
     - name: Create and activate virtualenv
@@ -24,7 +22,9 @@ jobs:
         virtualenv -p python3 venv
         source venv/bin/activate
     - name: Install required packages
-      run: pip install -r requirements
+      if: '-d travit_service'
+      run: |
+        cd travit_service && pip install -r requirements
     - name: Run Tests
       run: if [-f manage.py ] && python manage.py -v 2
     - name: Cleanup
