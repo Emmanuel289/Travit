@@ -26,10 +26,11 @@ jobs:
         source venv/bin/activate
     - name: Install required packages
       run: |
-        cd travit_service
-        sudo pip3 install -r requirements.txt
-    - name: Run Tests
-      run: python manage.py -v 2
+        [ -d 'travit_service' ] && cd travit_service || echo 'app directory does not exist' && exit 1
+        [ -f 'requirements.txt' ] && sudo pip3 install -r requirements.txt || echo 'requirements file does not exist' && exit 1
+    - name: Run tests
+      run: | 
+        cd travit_service && python manage.py -v 2
     - name: Cleanup
       run: |
         echo 'Tests successfully completed. Deactivating virtualenv...'
