@@ -16,7 +16,7 @@ jobs:
     - name: 'Install Pip'
       run: |
         cd travit_service
-        apt-get install python3-pip
+        sudo apt-get install python3-pip
     - name: Install Virtualenv
       run: pip3 install virtualenv
     - name: Create and activate virtualenv
