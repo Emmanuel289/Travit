@@ -11,12 +11,15 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - run: echo 'Checked out repo...'
+    - name: Check out
+      uses: actions/checkout@v3
+      
     - name: 'Install Pip'
-    - run: sudo apt-get install python3-pip
+      run: sudo apt-get install python3-pip
+      
     - name: Install virtualenv
       run: pip3 install virtualenv
+      
     - name: Create and activate python3 virtualenv
       run: | 
         virtualenv -p python3 venv
