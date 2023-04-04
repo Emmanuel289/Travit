@@ -1,28 +1,32 @@
-name: "Test Django Apps"
+name: Test Django Apps
 
-on: "pull_request"
+on: pull_request
 
 jobs:
   test_django_apps:
+    name: Test Django Apps
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    runs_on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/@checkout
-    - run: cd travit_service
-    - step: 'Install Pip'
-      run: apt-get install python3-pip
-    - step: 'Install Virtualenv'
+    - name: 'Install Pip'
+      run: |
+        cd travit_service
+        apt-get install python3-pip
+    - name: Install Virtualenv
       run: pip3 install virtualenv
-    - step: 'Create and activate virtualenv'
-      run: virtualenv -p python3 venv
-      run: source venv/bin/activate
-    - step: 'Install required packages'
+    - name: Create and activate virtualenv
+      run: | 
+        virtualenv -p python3 venv
+        source venv/bin/activate
+    - name: Install required packages
       run: pip install -r requirements
-    - step: 'Run Tests'
+    - name: Run Tests
       run: if [-f manage.py ] && python manage.py -v 2
-    - step: 'Deactivate virtualenv and cleanup'
-      run: echo 'Tests successfully completed. Deactivating virtualenv...'
-      run: deactivate
+    - name: Cleanup
+      run: |
+        echo 'Tests successfully completed. Deactivating virtualenv...'
+        deactivate
 
 
 
