@@ -1,5 +1,4 @@
 name: Test Django Apps
-
 on:
   pull_request:
   push:
@@ -13,11 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - run: echo 'Checked out repo...'
     - name: 'Install Pip'
     - run: sudo apt-get install python3-pip
-    - name: Install Virtualenv
+    - name: Install virtualenv
       run: pip3 install virtualenv
-    - name: Create and activate virtualenv
+    - name: Create and activate python3 virtualenv
       run: | 
         virtualenv -p python3 venv
         source venv/bin/activate
