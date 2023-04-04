@@ -26,7 +26,8 @@ jobs:
         source venv/bin/activate
     - name: Install required packages
       run: |
-        [ -d travit_service ] && cd travit_service && pip install -r requirements
+        [ -d travit_service ] && cd travit_service || echo 'app directory cannot be found' && exit 1
+        [ -f requirements.txt ] && pip install -r requirements.txt || echo 'requirements file cannot be found' && exit 1
     - name: Run Tests
       run: if [-f manage.py ] && python manage.py -v 2
     - name: Cleanup
