@@ -25,9 +25,8 @@ jobs:
         virtualenv -p python3 venv
         source venv/bin/activate
     - name: Install required packages
-      if: '-d travit_service'
       run: |
-        cd travit_service && pip install -r requirements
+        [ -d travit_service ] && cd travit_service && pip install -r requirements
     - name: Run Tests
       run: if [-f manage.py ] && python manage.py -v 2
     - name: Cleanup
