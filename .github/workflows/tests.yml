@@ -30,10 +30,11 @@ jobs:
         pip3 install -r requirements.txt || echo 'requirements file does not exist'
     - name: Run tests
       run: | 
-        cd travit_service && python manage.py -v 2
+        cd travit_service && python manage.py test -v 2
     - name: Cleanup
       run: |
-        echo 'Tests successfully completed. Deactivating virtualenv...'
+        echo 'Tests successfully completed'
+        echo 'Deactivating virtualenv...'
         deactivate
 
 
