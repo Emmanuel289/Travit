@@ -27,7 +27,16 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', False)
 
+SERVER_ADDRESS = os.getenv('SERVER_ADDRESS', '')
+SERVER_URL = os.getenv('SERVER_URL', '')
+
 ALLOWED_HOSTS = []
+
+if SERVER_ADDRESS:
+    ALLOWED_HOSTS += [SERVER_ADDRESS]
+
+if SERVER_URL:
+    ALLOWED_HOSTS += [SERVER_URL]
 
 
 # Django core apps
@@ -147,6 +156,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -154,10 +165,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'users.User'
-
-if DEBUG:
-    CORS_ALLOW_ALL_ORIGINS = True
-
 
 try:
     from .server_settings import *
