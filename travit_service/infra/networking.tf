@@ -37,9 +37,17 @@ resource "aws_security_group" "travit_sg" {
   }
 
   ingress {
-    description = "Nginx service"
+    description = "Nginx service HTTP"
     from_port   = 80
     to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
+  }
+
+  ingress {
+    description = "Nginx service HTTPS"
+    from_port   = 443
+    to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
   }
