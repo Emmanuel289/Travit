@@ -5,6 +5,8 @@ import './styles.css';
 
 export const SignUp = () => {
 
+    const server_url = 'https://api.travit.ca/api-auth-djoser/';
+
     const initialState = {
         usernameValue: '',
         emailValue: '',
@@ -32,7 +34,7 @@ export const SignUp = () => {
             async function SignUp(){
                 try {
                     const response = await Axios.post(
-                        'http://ec2-15-222-248-158.ca-central-1.compute.amazonaws.com:3000/api-auth-djoser/users/', 
+                        `${server_url}users/`, 
                         {
                             username: usernameValue,
                             email: emailValue,

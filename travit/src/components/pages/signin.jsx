@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 export const SignIn = () => {
 
+    const server_url = 'https://api.travit.ca/api-auth-djoser/';
+
     const  initialState = {
         usernameValue: '',
         emailValue: '',
@@ -44,7 +46,7 @@ export const SignIn = () => {
             const source = Axios.CancelToken.source();
             async function SignIn() {
                 try {
-                    const response = await Axios.post('http://api.travit.ca/api-auth-djoser/token/login/', 
+                    const response = await Axios.post(`${server_url}token/login/`, 
                     {
                         username: state.usernameValue, 
                         password: state.passwordValue
@@ -73,7 +75,7 @@ export const SignIn = () => {
             const source = Axios.CancelToken.source();
             async function GetUserInfo() {
                 try {
-                    const response = await Axios.get('http://api.travit.ca/api-auth-djoser/users/me/', 
+                    const response = await Axios.get(`${server_url}users/me/`, 
                     {
                         headers: {Authorization : 'Token '.concat(state.token)}
                     }, 

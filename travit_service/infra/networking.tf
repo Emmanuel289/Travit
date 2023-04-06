@@ -37,29 +37,12 @@ resource "aws_security_group" "travit_sg" {
   }
 
   ingress {
-    description = "Nginx service HTTP"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
-  }
-
-  ingress {
-    description = "Nginx service HTTPS"
+    description = "Allow HTTPS Access for Nginx Proxy"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
   }
-
-  ingress {
-    description = "Dev server"
-    from_port   = 8000
-    to_port     = 8000
-    protocol    = "tcp"
-    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
-  }
-
   egress {
     description = "Allow all outbound traffic"
     from_port   = 0
