@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const SignIn = () => {
 
-    const server_url = 'https://api.travit.ca/api-auth-djoser/';
+    const server_url = 'https://api.travit.ca/auth/';
 
     const  initialState = {
         usernameValue: '',

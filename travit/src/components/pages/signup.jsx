@@ -5,7 +5,7 @@ import './styles.css';
 
 export const SignUp = () => {
 
-    const server_url = 'https://api.travit.ca/api-auth-djoser/';
+    const server_url = 'https://api.travit.ca/auth/';
 
     const initialState = {
         usernameValue: '',
