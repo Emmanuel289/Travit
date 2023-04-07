@@ -15,7 +15,7 @@ variable "aws_region" {
 }
 
 variable "aws_profile" {
-  default     = "784757923335_AdministratorAccess"
+  default     = ""
   description = "AWS profile to use when authenticating"
 }
 
