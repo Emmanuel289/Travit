@@ -4,20 +4,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('users', '0003_alter_user_password'),
+        ("users", "0003_alter_user_password"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='password',
-            field=models.CharField(max_length=255, verbose_name='Password'),
+            model_name="user",
+            name="password",
+            field=models.CharField(max_length=255, verbose_name="Password"),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='username',
-            field=models.CharField(max_length=255, unique=True, verbose_name='Username'),
+            model_name="user",
+            name="username",
+            field=models.CharField(
+                max_length=255, unique=True, verbose_name="Username"
+            ),
         ),
     ]

@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('destinations', '0001_initial'),
+        ("destinations", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='destination',
-            name='timezone',
-            field=models.CharField(default='UTC', max_length=50, verbose_name='Timezone'),
+            model_name="destination",
+            name="timezone",
+            field=models.CharField(
+                default="UTC", max_length=50, verbose_name="Timezone"
+            ),
         ),
     ]

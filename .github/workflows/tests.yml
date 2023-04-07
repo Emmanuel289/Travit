@@ -13,15 +13,15 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v3
-      
+
     - name: 'Install Pip'
       run: sudo apt-get install python3-pip
-      
+
     - name: Install virtualenv
       run: pip3 install virtualenv
-      
+
     - name: Create and activate python3 virtualenv
-      run: | 
+      run: |
         virtualenv -p python3 venv
         source venv/bin/activate
     - name: Install required packages
@@ -29,15 +29,9 @@ jobs:
         cd travit_service || echo 'app directory does not exist'
         pip3 install -r requirements.txt || echo 'requirements file does not exist'
     - name: Run tests
-      run: | 
+      run: |
         cd travit_service && python manage.py test -v 2
     - name: Cleanup
       run: |
         echo 'Tests successfully completed'
         echo 'Deactivating virtualenv...'
-
-
-
-
-          
-          

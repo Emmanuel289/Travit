@@ -37,8 +37,8 @@ const Sidebar = () => {
                 {<div>{sidebar ? <AiIcons.AiOutlineClose  onClick={showSidebar} />: <FaIcons.FaBars onClick={showSidebar} />}</div>}
               </NavLink>
             </div>
-            <nav 
-              className="sidebar" 
+            <nav
+              className="sidebar"
               style={sidebarNavStyle}
               >
               <div className="sidebar-wrap">
@@ -51,5 +51,5 @@ const Sidebar = () => {
         </>
       );
     };
-    
+
 export { Sidebar };

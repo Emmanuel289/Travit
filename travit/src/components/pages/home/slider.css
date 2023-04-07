@@ -9,8 +9,8 @@
     display: flex;
     justify-content: center;
     top: 20px;
-    margin: 10px 10px; 
-    bottom: 20px;  
+    margin: 10px 10px;
+    bottom: 20px;
 }
 
 .owl-dots .owl-dot {
@@ -29,6 +29,3 @@
 h3 {
     justify-content: center;
 }
-
-
-

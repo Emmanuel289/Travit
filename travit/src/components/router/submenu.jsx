@@ -12,18 +12,18 @@ const SidebarLink = styled(Link)`
   height: 30px;
   text-decoration: none;
   font-size: 12px;
- 
+
   &:hover {
     background: blue;
     border-left: 4px;
     cursor: pointer;
   }
 `;
- 
+
 const SidebarLabel = styled.span`
   margin-left: 8px;
 `;
- 
+
 const DropdownLink = styled(Link)`
   background: #252831;
   height: 40px;
@@ -33,7 +33,7 @@ const DropdownLink = styled(Link)`
   text-decoration: none;
   color: #f5f5f5;
   font-size: 12px;
- 
+
   &:hover {
     background: blue;
     cursor: pointer;
@@ -61,7 +61,7 @@ const SubMenu = ({ item }) => {
                     : null}
                 </div>
             </SidebarLink>
-            {subnav && 
+            {subnav &&
                 item.subNav.map((item, index) => {
                     return (
                         <DropdownLink to={item.path} key={index}>

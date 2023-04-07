@@ -4,30 +4,31 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('destinations', '0002_destination_timezone'),
+        ("destinations", "0002_destination_timezone"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='destination',
-            name='currency',
-            field=models.CharField(max_length=20, verbose_name='Currency'),
+            model_name="destination",
+            name="currency",
+            field=models.CharField(max_length=20, verbose_name="Currency"),
         ),
         migrations.AlterField(
-            model_name='destination',
-            name='name',
-            field=models.CharField(max_length=20, verbose_name='Name'),
+            model_name="destination",
+            name="name",
+            field=models.CharField(max_length=20, verbose_name="Name"),
         ),
         migrations.AlterField(
-            model_name='destination',
-            name='timezone',
-            field=models.CharField(default='UTC', max_length=20, verbose_name='Timezone'),
+            model_name="destination",
+            name="timezone",
+            field=models.CharField(
+                default="UTC", max_length=20, verbose_name="Timezone"
+            ),
         ),
         migrations.AlterField(
-            model_name='destination',
-            name='weather',
-            field=models.CharField(max_length=20, verbose_name='Weather'),
+            model_name="destination",
+            name="weather",
+            field=models.CharField(max_length=20, verbose_name="Weather"),
         ),
     ]
