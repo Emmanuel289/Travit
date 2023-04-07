@@ -10,7 +10,7 @@ import { SignIn } from '../pages/signin'
 
 
 function PageRouter() {
-     
+
     // Wrapper that loads page components at respective urls
 
     return (
@@ -28,4 +28,4 @@ function PageRouter() {
     );
 }
 
-export { PageRouter }; 
+export { PageRouter };

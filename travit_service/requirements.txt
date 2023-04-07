@@ -1,6 +1,7 @@
 Django==4.1.7
 djangorestframework==3.14.0
-django-cors-headers==3.14.0 
+django-cors-headers==3.14.0
 djoser
 Pillow
+pre-commit
 psycopg2

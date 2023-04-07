@@ -18,7 +18,7 @@ export const SignIn = () => {
     };
 
     const navigate = useNavigate();
-    
+
     function ReducerFunction(draft, action){
         switch (action.type) {
             case "catchUsernameChange":
@@ -46,11 +46,11 @@ export const SignIn = () => {
             const source = Axios.CancelToken.source();
             async function SignIn() {
                 try {
-                    const response = await Axios.post(`${server_url}token/login/`, 
+                    const response = await Axios.post(`${server_url}token/login/`,
                     {
-                        username: state.usernameValue, 
+                        username: state.usernameValue,
                         password: state.passwordValue
-                    }, 
+                    },
                     {
                         cancelToken: source.token
                     }
@@ -75,10 +75,10 @@ export const SignIn = () => {
             const source = Axios.CancelToken.source();
             async function GetUserInfo() {
                 try {
-                    const response = await Axios.get(`${server_url}users/me/`, 
+                    const response = await Axios.get(`${server_url}users/me/`,
                     {
                         headers: {Authorization : 'Token '.concat(state.token)}
-                    }, 
+                    },
                     {
                         cancelToken: source.token
                     }
@@ -97,7 +97,7 @@ export const SignIn = () => {
 
     const handleChangeUserName = (e) => {
         dispatch({
-            type: "catchUsernameChange", 
+            type: "catchUsernameChange",
             usernameChosen: e.target.value,
         });
     }

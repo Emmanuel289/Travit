@@ -34,13 +34,13 @@ export const SignUp = () => {
             async function SignUp(){
                 try {
                     const response = await Axios.post(
-                        `${server_url}users/`, 
+                        `${server_url}users/`,
                         {
                             username: usernameValue,
                             email: emailValue,
                             password: passwordValue,
                             re_password: secondpasswordValue,
-                        }, 
+                        },
                         {
                             cancelToken: source.token,
                         }
@@ -56,7 +56,7 @@ export const SignUp = () => {
                 };
             }
         }, [sendRequest]);
-    
+
     const handleChangeUserName = (e) => {
         setUsernameValue(e.target.value);
     }
@@ -92,12 +92,12 @@ export const SignUp = () => {
                 draft.secondpasswordValue = action.confirmPasswordChosen;
                 break;
             case 'changeSendRequest':
-            draft.sendRequest = draft.sendRequest + 1; 
+            draft.sendRequest = draft.sendRequest + 1;
         }
 
     }
 
-    
+
         return (
         <div className='signup'>
             <form className="container" onSubmit={handleFormSubmit}>

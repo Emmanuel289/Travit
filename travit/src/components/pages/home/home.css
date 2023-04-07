@@ -36,7 +36,7 @@
   background: url(/static/media/img2.svg) no-repeat #00FFFF;
   text-align: center;
 }
-  
+
 .grid.bg2 {
   flex-basis: auto;
   height: auto;
@@ -58,7 +58,7 @@
   background: url(/static/media/img2.svg) no-repeat #4169E1;
   text-align: center;
 }
-  
+
 .grid.bg3 {
   flex-basis: auto;
   height: auto;
@@ -79,7 +79,7 @@
   background: url(/static/media/img4.svg) no-repeat #00FFFF;
   text-align: center;
 }
-  
+
 .grid.bg4 {
   flex-basis: auto;
   height: auto;
@@ -106,7 +106,7 @@
     flex-direction: row;
   }
 }
-  
+
 @media (orientation: portrait) {
   .wrapper {
     flex-direction: column;
