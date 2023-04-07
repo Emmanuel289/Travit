@@ -5,10 +5,10 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     username = models.CharField(
-        verbose_name="Username", blank=False, max_length=20, unique=True)
+        verbose_name="Username", blank=False, max_length=255, unique=True)
     email = models.EmailField(verbose_name="Email", blank=False, unique=True)
     password = models.CharField(
-        verbose_name='Password', blank=False, max_length=20)
+        verbose_name='Password', blank=False, max_length=255)
 
     class Meta:
         ordering = ['id']
