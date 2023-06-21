@@ -5,13 +5,13 @@
     justify-content: center;
     width: 100%;
   }
-  
+
   .box .style-layer-wrapper {
     border: 0px none;
     height: 48px;
     width: 512px;
   }
-  
+
   .box .style-layer {
     align-items: center;
     background-color: #316bff;
@@ -26,7 +26,7 @@
     top: 0;
     width: 512px;
   }
-  
+
   .box .button {
     color: #ffffff;
     font-family: "Montserrat-SemiBold", Helvetica;
@@ -37,4 +37,3 @@
     position: relative;
     width: fit-content;
   }
-  
