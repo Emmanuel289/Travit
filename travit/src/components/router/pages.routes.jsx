@@ -5,7 +5,7 @@ import { Sidebar } from './sidebar';
 import { Home } from '../pages/home/home';
 import { Contact } from "../pages/contact";
 import { SignUp } from '../pages/signup';
-import { SignIn } from '../pages/signin'
+import { Login } from '../pages/login/login'
 
 
 
@@ -18,9 +18,10 @@ function PageRouter() {
             <Router>
                 <Sidebar />
                 <Routes>
-                    <Route path='/' element={<Home/>} />
+                    {/* <Route path='/' element={<Home/>} /> */}
+                    <Route path='/' element={<Login/>} /> // Fix duplicate
                     <Route path='/signup' element={<SignUp/>} />
-                    <Route path='/signin' element={<SignIn/>} />
+                    <Route path='/login' element={<Login/>} />
                     <Route path='/contact' element={<Contact/>} />
                 </Routes>
             </Router>

@@ -1,27 +1,28 @@
 .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    display: inline-block;
-    align-items: center;
-    background-color:  #0d6efd;
-    color: white;
-    font-weight: 600;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  display: inline;
+  align-items: center;
+  width: 100%;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.toolbar.home
-.toolbar.contact
-.toolbar.signup
+.toolbar.home,
+.toolbar.contact,
+.toolbar.signup,
 .toolbar.signin {
   background-color: inherit;
   display: flex;
+  align-items: center;
   margin-left: 260px;
   text-align: center;
   font-size: large;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .title {
@@ -40,7 +41,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: right;
+  position: relative; /* Use relative instead of right */
 }
 
 .nav-link {
@@ -48,7 +49,7 @@
   font-size: 1.5rem;
   height: 40px;
   display: flex;
-  justify-content: flex-right;
+  justify-content: flex-end; /* Use flex-end instead of flex-right */
   align-items: center;
   position: absolute;
   right: 15px;
@@ -60,77 +61,15 @@
 
 .wrapper {
   display: flex;
-  grid-gap: 30px;
+  gap: 30px; /* Use gap instead of grid-gap */
   grid-auto-rows: minmax(60px, auto);
   width: auto;
   position: relative;
 }
 
-.grid.bg1 {
-  flex-basis: auto;
-  height: auto;
-  width: 200px;
-  border-radius: 10px;
-  background-position: center center;
-  background-size: cover;
-  padding: 30px 30px;
-  box-sizing: border-box;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  flex-direction: column;
-  background-repeat: no-repeat !important;
-  box-shadow: rgb(85 85 85 / 40%) 0px 8px 50px;
-  border-radius: 5px;
-  animation-duration: 1s;
-  animation-delay: 0.2s;
-  background: url(/static/media/img2.svg) no-repeat #00FFFF;
-  text-align: center;
-}
-
-.grid.bg2 {
-  flex-basis: auto;
-  height: auto;
-  width: 200px;
-  border-radius: 10px;
-  background-position: center center;
-  background-size: cover;
-  padding: 30px 30px;
-  box-sizing: border-box;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  flex-direction: column;
-  background-repeat: no-repeat !important;
-  box-shadow: rgb(85 85 85 / 40%) 0px 8px 50px;
-  border-radius: 5px;
-  animation-duration: 1s;
-  animation-delay: 0.2s;
-  background: url(/static/media/img2.svg) no-repeat #4169E1;
-  text-align: center;
-}
-
-.grid.bg3 {
-  flex-basis: auto;
-  height: auto;
-  width: 200px;
-  border-radius: 10px;
-  background-position: center center;
-  background-size: cover;
-  padding: 30px 30px;
-  box-sizing: border-box;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  flex-direction: column;
-  background-repeat: no-repeat !important;
-  box-shadow: rgb(85 85 85 / 40%) 0px 8px 50px;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  background: url(/static/media/img4.svg) no-repeat #00FFFF;
-  text-align: center;
-}
-
+.grid.bg1,
+.grid.bg2,
+.grid.bg3,
 .grid.bg4 {
   flex-basis: auto;
   height: auto;
@@ -138,18 +77,36 @@
   border-radius: 10px;
   background-position: center center;
   background-size: cover;
-  padding: 30px 30px;
+  padding: 30px;
   box-sizing: border-box;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   background-repeat: no-repeat !important;
-  box-shadow: rgb(85 85 85 / 40%) 0px 8px 50px;
+  box-shadow: rgba(85, 85, 85, 0.4) 0px 8px 50px;
   animation-duration: 1s;
+  text-align: center;
+}
+
+.grid.bg1 {
+  animation-delay: 0.2s;
+  background: url(/static/media/img2.svg) no-repeat #00FFFF;
+}
+
+.grid.bg2 {
+  animation-delay: 0.2s;
+  background: url(/static/media/img2.svg) no-repeat #4169E1;
+}
+
+.grid.bg3 {
+  animation-delay: 0.5s;
+  background: url(/static/media/img4.svg) no-repeat #00FFFF;
+}
+
+.grid.bg4 {
   animation-delay: 0.2s;
   background: url(/static/media/img5.svg) no-repeat #FF00FF;
-  text-align: center;
 }
 
 @media (orientation: landscape) {
