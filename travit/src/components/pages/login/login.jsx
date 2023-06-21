@@ -226,14 +226,14 @@ export const Login = () => {
               <div className="rectangle-3" />
             </div>
             <div className="frame-13">
-              {/* <img className="img" alt="Frame" src="/src/assets/images/facebook-vector.svg" />
-              <img className="frame-14" alt="Frame" src="/src/assets/images/flat-color-icons_google.svg" /> */}
+              <img className="img" alt="Frame" src="https://travit-images.s3.ca-central-1.amazonaws.com/images/facebook-vector.svg" />
+              <img className="frame-14" alt="Frame" src="https://travit-images.s3.ca-central-1.amazonaws.com/images/flat-color-icons_google.svg" />
             </div>
           </div>
         </div>
         <div className="frame-15">
           <div className="text-wrapper-6">Travit</div>
-          <img className="subtract" alt="Subtract" src="/src/assets/images/subtract.jpg" />
+          <img className="subtract" alt="Subtract" src="https://travit-images.s3.ca-central-1.amazonaws.com/images/subtract.jpg" />
         </div>
       </div>
     </div>
