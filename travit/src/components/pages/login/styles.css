@@ -1,0 +1,452 @@
+.login {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .login .div {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 1024px;
+    position: relative;
+    width: 1440px;
+  }
+
+  .login .group {
+    background-image: url(https://travit-images.s3.ca-central-1.amazonaws.com/images/rectangle-20.jpg);
+    background-size: 100% 100%;
+    height: 816px;
+    left: 720px;
+    position: absolute;
+    top: 104px;
+    width: 616px;
+  }
+
+  .login .overlap-group {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 30px 30px 0px 0px;
+    height: 58px;
+    position: relative;
+    top: 758px;
+  }
+
+  .login .frame {
+    align-items: flex-start;
+    display: flex;
+    gap: 8px;
+    left: 273px;
+    position: relative;
+    top: 24px;
+    width: fit-content;
+  }
+
+  .login .rectangle {
+    background-color: #316bff;
+    border-radius: 5px;
+    height: 10px;
+    min-width: 32px;
+    position: relative;
+  }
+
+  .login .ellipse {
+    background-color: #e9efff;
+    border-radius: 5px;
+    height: 10px;
+    min-width: 10px;
+    position: relative;
+  }
+
+  .login .ellipse-2 {
+    background-color: #e9efff;
+    border-radius: 5px;
+    height: 10px;
+    min-width: 10px;
+    position: relative;
+  }
+
+  .login .frame-2 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    left: 104px;
+    position: absolute;
+    top: 205px;
+    width: 512px;
+  }
+
+  .login .frame-3 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+
+  .login .h-1 {
+    color: #333333;
+    font-family: "TradeGothic LT Extended-Bold", Helvetica;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .p {
+    color: #666666;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    opacity: 0.75;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .frame-4 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+  }
+
+  .login .frame-5 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+
+  .login .frame-6 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .frame-7 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 77px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .label-text {
+    align-items: center;
+    display: flex;
+    padding: 0px 4px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .label-text-2 {
+    color: #666666;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .text-field {
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 56px;
+    position: relative;
+    width: 512px;
+  }
+
+  .login .state-layer-wrapper {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: #f6f7f9;
+    border: 1px solid;
+    border-color: #ecedee;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 56px;
+    position: relative;
+  }
+
+  .login .state-layer {
+    align-items: center;
+    align-self: stretch;
+    border-radius: 4px 4px 0px 0px;
+    display: flex;
+    height: 56px;
+    padding: 4px 0px 4px 16px;
+    position: relative;
+  }
+
+  .login .content {
+    flex: 1;
+    height: 40px;
+    min-width: 496px;
+    position: relative;
+  }
+
+  .login .frame-8 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 77px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .label-text-wrapper {
+    align-items: center;
+    display: flex;
+    padding: 0px 4px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .label-text-3 {
+    color: #666666;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .text-field-2 {
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 56px;
+    position: relative;
+    width: 512px;
+  }
+
+  .login .div-wrapper {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: #f6f7f9;
+    border: 1px solid;
+    border-color: #ecedee;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 56px;
+    position: relative;
+  }
+
+  .login .state-layer-2 {
+    align-items: center;
+    align-self: stretch;
+    border-radius: 4px 4px 0px 0px;
+    display: flex;
+    height: 56px;
+    padding: 4px 0px 4px 16px;
+    position: relative;
+  }
+
+  .login .content-2 {
+    flex: 1;
+    height: 40px;
+    min-width: 448px;
+    position: relative;
+  }
+
+  .login .trailing-icon {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 48px;
+    justify-content: center;
+    padding: 12px;
+    position: relative;
+    width: 48px;
+  }
+
+  .login .frame-9 {
+    align-items: center;
+    display: flex;
+    gap: 252px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .frame-10 {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .text-wrapper-2 {
+    color: #316bff;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .text-wrapper-3 {
+    color: #316bff;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-align: right;
+    width: fit-content;
+  }
+
+  .login .frame-11 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .don-t-have-an {
+    align-self: stretch;
+    color: transparent;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+  }
+
+  .login .span {
+    color: #333333;
+    font-weight: 500;
+  }
+
+  .login .text-wrapper-4 {
+    color: #316bff;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-weight: 600;
+  }
+
+  .login .frame-12 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    gap: 16px;
+    position: relative;
+  }
+
+  .login .rectangle-2 {
+    background-color: #333333;
+    flex: 1;
+    height: 1px;
+    min-width: 194px;
+    opacity: 0.25;
+    position: relative;
+  }
+
+  .login .text-wrapper-5 {
+    color: #666666;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    opacity: 0.5;
+    position: relative;
+    width: fit-content;
+  }
+
+  .login .rectangle-3 {
+    background-color: #333333;
+    flex: 1;
+    height: 1px;
+    min-width: 194px;
+    opacity: 0.25;
+    position: relative;
+  }
+
+  .login .frame-13 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    gap: 16px;
+    position: relative;
+  }
+
+  .login .img {
+    align-self: stretch;
+    height: 56px;
+    min-width: 512px;
+    position: relative;
+  }
+
+ .login .frame-14 {
+  flex: 1;
+  height: 56px;
+  min-width: 248px;
+  position: relative;
+}
+
+.login .frame-15 {
+  height: 39px;
+  left: 104px;
+  position: absolute;
+  top: 104px;
+  width: 110px;
+}
+
+  .login .text-wrapper-6 {
+    color: #3b3e44;
+    font-family: "Montserrat-Bold", Helvetica;
+    font-size: 20.2px;
+    font-weight: 700;
+    left: 50px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 6px;
+  }
+
+  .login .subtract {
+    height: 39px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 38px;
+  }

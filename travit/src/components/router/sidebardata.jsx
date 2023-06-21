@@ -5,15 +5,8 @@ import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
     {
-      title: "Home",
-      path: "/",
-      icon: <AiIcons.AiFillHome />,
-      iconClosed: <RiIcons.RiArrowDownSFill />,
-      iconOpened: <RiIcons.RiArrowUpSFill />,
-    },
-    {
-      title: "Sign in",
-      path: "/signin",
+      title: "Login",
+      path: "/login",
       icon: <AiIcons.AiFillLock />,
     },
     {
