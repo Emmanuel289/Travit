@@ -5,3 +5,4 @@ djoser
 Pillow
 pre-commit
 psycopg2
+drf-yasg
