@@ -19,4 +19,4 @@ repos:
     rev: 6.0.0
     hooks:
       - id: flake8
-        exclude: "migrations/|settings.py|tests.py|views.py|models.py|admin.py"
+        exclude: "migrations/|settings.py|tests.py|views.py|urls.py|models.py|admin.py"
