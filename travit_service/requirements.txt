@@ -5,5 +5,4 @@ djoser
 Pillow
 pre-commit
 drf-yasg
-pyscopg2
 gunicorn
