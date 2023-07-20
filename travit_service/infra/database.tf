@@ -40,7 +40,7 @@ resource "aws_db_instance" "travit_db_instance" {
   allocated_storage      = 5
   engine                 = "postgres"
   db_name                = "travit"
-  engine_version         = "14.1"
+  engine_version         = "14.7"
   username               = "travit"
   password               = var.db_password
   db_subnet_group_name   = aws_db_subnet_group.travit_db.name
