@@ -166,6 +166,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
 
+# Enable CORS
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
 try:
     from .server_settings import *
 except ImportError:
