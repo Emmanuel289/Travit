@@ -1,6 +1,6 @@
 provider "aws" {
-  profile = var.aws_profile
-  region  = var.aws_region
+  # profile = var.aws_profile
+  region = var.aws_region
 }
 
 locals {
@@ -31,8 +31,8 @@ resource "null_resource" "travit_svc_config" {
   depends_on = [aws_instance.travit_svc_instance]
 
   provisioner "file" {
-    source      = "setup.sh"
-    destination = "/home/${local.username}/setup.sh"
+    source      = "setup"
+    destination = "/home/${local.username}/setup"
   }
 
   connection {
