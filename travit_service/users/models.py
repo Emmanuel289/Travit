@@ -4,13 +4,13 @@ from django.db import models
 
 class User(AbstractUser):
     first_name = models.CharField(
-        verbose_name='first_name', blank=False, max_length=150)
-    last_name = models.CharField(
-        verbose_name='last_name', blank=False, max_length=150)
-    email = models.EmailField(
-        verbose_name="email_address", blank=False, unique=True)
+        verbose_name="first_name", blank=False, max_length=150
+    )
+    last_name = models.CharField(verbose_name="last_name", blank=False, max_length=150)
+    email = models.EmailField(verbose_name="email_address", blank=False, unique=True)
     re_password = models.CharField(
-        verbose_name="Retype Password", blank=False, max_length=255, default='')
+        verbose_name="Retype Password", blank=False, max_length=255, default=""
+    )
 
     class Meta:
         ordering = ["id"]
