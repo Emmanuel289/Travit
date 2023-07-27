@@ -29,7 +29,7 @@ DEBUG = os.getenv("DEBUG", False)
 SERVER_ADDRESS = os.getenv("SERVER_ADDRESS", "")
 SERVER_URL = os.getenv("SERVER_URL", "")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 if SERVER_ADDRESS:
     ALLOWED_HOSTS += [SERVER_ADDRESS]
@@ -133,9 +133,10 @@ REST_FRAMEWORK = {
 }
 
 DJOSER = {
-    "USER_CREATE_PASSWORD_RETYPE": True,
-    "SEND_ACTIVATION_EMAIL": False,
-    "SEND_CONFIRMATION_EMAIL": False,
+    "SERIALIZERS": {
+        "user_create": "users.serializers.UserCreatePasswordRetypeSerializer",
+    },
+    "LOGIN_FIELD": "email",
 }
 
 
@@ -168,7 +169,7 @@ AUTH_USER_MODEL = "users.User"
 
 # Enable CORS
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    "http://*",
 ]
 
 try:
