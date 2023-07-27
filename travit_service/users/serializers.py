@@ -1,8 +1,6 @@
 # from rest_framework import serializers
 from djoser.serializers import UserCreatePasswordRetypeSerializer as BaseUserCreatePasswordRetypeSerializer
 
-from .models import User
-
 
 class UserCreatePasswordRetypeSerializer(BaseUserCreatePasswordRetypeSerializer):
     class Meta(BaseUserCreatePasswordRetypeSerializer.Meta):
