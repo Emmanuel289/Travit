@@ -29,7 +29,7 @@ DEBUG = os.getenv("DEBUG", False)
 SERVER_ADDRESS = os.getenv("SERVER_ADDRESS", "")
 SERVER_URL = os.getenv("SERVER_URL", "")
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 if SERVER_ADDRESS:
     ALLOWED_HOSTS += [SERVER_ADDRESS]
@@ -133,10 +133,12 @@ REST_FRAMEWORK = {
 }
 
 DJOSER = {
-    "SERIALIZERS": {
-        "user_create": "users.serializers.UserCreatePasswordRetypeSerializer",
+    'SERIALIZERS': {
+        'user_create': 'users.serializers.CustomUserCreateSerializer',
+        'user': 'users.serializers.CustomUserSerializer',
     },
-    "LOGIN_FIELD": "email",
+    'USER_CREATE_PASSWORD_RETYPE': False,
+    'LOGIN_FIELD': 'email'
 }
 
 
@@ -167,10 +169,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
 
-# Enable CORS
-CORS_ALLOWED_ORIGINS = [
-    "http://*",
-]
+# CORS POLICY
+CORS_ALLOW_ALL_ORIGINS = True
 
 try:
     from .server_settings import *

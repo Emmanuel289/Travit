@@ -1,16 +1,17 @@
-# from rest_framework import serializers
-from djoser.serializers import \
-  UserCreatePasswordRetypeSerializer as BaseUserCreatePasswordRetypeSerializer
+from djoser.serializers import UserCreateSerializer, UserSerializer
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
-class UserCreatePasswordRetypeSerializer(BaseUserCreatePasswordRetypeSerializer):
-    class Meta(BaseUserCreatePasswordRetypeSerializer.Meta):
-        fields = [
-            "id",
-            "first_name",
-            "last_name",
-            "username",
-            "email",
-            "password",
-            "re_password",
-        ]
+class CustomUserCreateSerializer(UserCreateSerializer):
+    class Meta(UserCreateSerializer.Meta):
+        model = User
+        fields = ('id', 'first_name',
+                  'last_name', 'email', 'password')
+
+
+class CustomUserSerializer(UserSerializer):
+    class Meta(UserSerializer.Meta):
+        model = User
+        fields = ('id', 'first_name', 'last_name', 'email')
