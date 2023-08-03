@@ -18,7 +18,6 @@ from django.urls import include, path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
-
 from users.views import ActivateUserViewSet
 
 schema_view = get_schema_view(
@@ -44,14 +43,15 @@ urlpatterns = [
         schema_view.with_ui("swagger", cache_timeout=0),
         name="schema-swagger-ui",
     ),
-    path("redoc/", schema_view.with_ui("redoc",
-         cache_timeout=0), name="schema-redoc"),
+    path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
     path("admin/", admin.site.urls),
     path("auth/", include("djoser.urls")),
     path("auth/", include("djoser.urls.authtoken")),
     path("destinations/", include("destinations.urls")),
-
     # Activation url
-    path("verify/<str:uid>/<str:token>/",
-         ActivateUserViewSet.as_view({'get': 'activation'}), name='activation'),
+    path(
+        "verify/<str:uid>/<str:token>/",
+        ActivateUserViewSet.as_view({"get": "activation"}),
+        name="activation",
+    ),
 ]

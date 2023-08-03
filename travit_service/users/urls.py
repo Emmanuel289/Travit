@@ -3,7 +3,6 @@ from rest_framework import routers
 
 from .views import ActivateUserViewSet
 
-
 router = routers.DefaultRouter()
 router.register("", ActivateUserViewSet)
 
