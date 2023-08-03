@@ -132,6 +132,14 @@ REST_FRAMEWORK = {
     ),
 }
 
+# EMAIL
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # Use the appropriate port for your SMTP server
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'emmirald@travit.ca'
+EMAIL_HOST_PASSWORD = 'hfwbrsjepxfjdoyt'
+
 DJOSER = {
     "SERIALIZERS": {
         "user_create": "users.serializers.CustomUserCreateSerializer",
@@ -139,6 +147,10 @@ DJOSER = {
     },
     "USER_CREATE_PASSWORD_RETYPE": False,
     "LOGIN_FIELD": "email",
+    "SEND_ACTIVATION_EMAIL": True,
+    "SEND_CONFIRMATION_EMAIL": True,
+    # URL for verification
+    "ACTIVATION_URL": "verify/{uid}/{token}",
 }
 
 
