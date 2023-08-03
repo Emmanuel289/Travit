@@ -133,12 +133,12 @@ REST_FRAMEWORK = {
 }
 
 # EMAIL
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587  # Use the appropriate port for your SMTP server
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'emmirald@travit.ca'
-EMAIL_HOST_PASSWORD = 'hfwbrsjepxfjdoyt'
+EMAIL_HOST_USER = "emmirald@travit.ca"
+EMAIL_HOST_PASSWORD = "hfwbrsjepxfjdoyt"
 
 DJOSER = {
     "SERIALIZERS": {
