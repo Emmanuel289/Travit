@@ -1,0 +1,23 @@
+#!/bin/sh
+cd travit_service 
+
+# virtual env setup
+
+ if [ -d venv ]; then 
+    echo 'Deleting existing Python3 virtual environment' 
+    rm -r virtualenv
+else
+    echo 'No Python3 virtual environment was detected. Creating a new environment'
+    python3 -m venv virtualenv 
+    echo 'Activating new environment'
+    . virtualenv/bin/activate
+fi
+
+# Install requirements
+pip install -r requirements.txt
+
+# Run migrations 
+python3 manage.py makemigrations && python3 manage.py migrate 
+
+# Start server
+python3 manage.py runserver
