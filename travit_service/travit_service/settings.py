@@ -151,6 +151,8 @@ DJOSER = {
     "SEND_CONFIRMATION_EMAIL": True,
     # URL for verification
     "ACTIVATION_URL": "verify/{uid}/{token}",
+    # URL for password reset
+    "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}"
 }
 
 
@@ -178,8 +180,26 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
 AUTH_USER_MODEL = "users.User"
+
+
+# LOGGING
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+        },
+    },
+    'root': {'level': 'INFO'},
+}
 
 # CORS POLICY
 CORS_ALLOW_ALL_ORIGINS = True
