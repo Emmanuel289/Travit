@@ -152,7 +152,7 @@ DJOSER = {
     # URL for verification
     "ACTIVATION_URL": "verify/{uid}/{token}",
     # URL for password reset
-    "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}"
+    "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}",
 }
 
 
@@ -185,20 +185,20 @@ AUTH_USER_MODEL = "users.User"
 
 # LOGGING
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
         },
     },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
         },
     },
-    'root': {'level': 'INFO'},
+    "root": {"level": "INFO"},
 }
 
 # CORS POLICY
