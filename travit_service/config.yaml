@@ -1,0 +1,19 @@
+secret_key: ${DJANGO_SECRET_KEY}
+debug: ${DEBUG}
+
+# SERVER
+server:
+  url: ${SERVER_URL}
+  address: ${SERVER_ADDRESS}
+allowed_hosts:
+  - localhost
+  - 127.0.0.1
+
+# EMAIL
+email:
+  backend: django.core.mail.backends.smtp.EmailBackend
+  host: smtp.gmail.com
+  port: 587
+  use_tls: true
+  user: ${HOST_USER}
+  password: ${HOST_PASSWORD}
