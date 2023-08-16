@@ -4,7 +4,8 @@ cd travit_service
 # virtual env setup
 
  if [ -d virtualenv ]; then
-    echo 'Deleting existing Python3 virtual environment'
+    echo 'Deactivating and Deleting existing Python3 virtual environment'
+    deactivate
     rm -r virtualenv
 else
     echo 'No Python3 virtual environment was detected. Creating a new environment'
