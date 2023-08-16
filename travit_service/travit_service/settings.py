@@ -16,8 +16,10 @@ from socket import gethostbyname, gethostname
 
 import yaml
 
-with open(os.path.expanduser(os.getenv("TRAVIT_CONFIG_PATH")), "r") as f:
-    config = yaml.safe_load(f.read())
+with open(os.path.expanduser(os.getenv('TRAVIT_CONFIG_PATH')), 'r') as f:
+    config = yaml.safe_load(
+        f.read()
+    )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,16 +29,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config.get("secret_key")
+SECRET_KEY = config.get('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config.get("DEBUG", False)
+DEBUG = config.get('DEBUG', False)
 
-server = config.get("server")
-SERVER_ADDRESS = server.get("address")
-SERVER_URL = server.get("url")
+server = config.get('server')
+SERVER_ADDRESS = server.get('address')
+SERVER_URL = server.get('url')
 
-ALLOWED_HOSTS = config.get("allowed_hosts") + [gethostbyname(gethostname())]
+ALLOWED_HOSTS = config.get('allowed_hosts') + [gethostbyname(gethostname())]
 
 if SERVER_ADDRESS:
     ALLOWED_HOSTS += [SERVER_ADDRESS]
