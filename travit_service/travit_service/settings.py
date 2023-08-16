@@ -15,6 +15,9 @@ from pathlib import Path
 from socket import gethostbyname, gethostname
 
 import yaml
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env
 
 with open(os.path.expanduser(os.getenv('TRAVIT_CONFIG_PATH')), 'r') as f:
     config = yaml.safe_load(
@@ -32,11 +35,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config.get('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config.get('DEBUG', False)
+DEBUG = os.getenv('DEBUG', False)
 
-server = config.get('server')
-SERVER_ADDRESS = server.get('address')
-SERVER_URL = server.get('url')
+SERVER_ADDRESS = os.getenv('SERVER_ADDRESS')
+SERVER_URL = os.getenv('SERVER_URL')
 
 ALLOWED_HOSTS = config.get('allowed_hosts') + [gethostbyname(gethostname())]
 
@@ -147,8 +149,8 @@ EMAIL_BACKEND = email.get("backend")
 EMAIL_HOST = email.get("host")
 EMAIL_PORT = email.get("port")
 EMAIL_USE_TLS = email.get("use_tls")
-EMAIL_HOST_USER = email.get("user")
-EMAIL_HOST_PASSWORD = email.get("password")
+EMAIL_HOST_USER = os.getenv("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWRD")
 
 DJOSER = {
     "SERIALIZERS": {
