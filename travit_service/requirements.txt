@@ -6,3 +6,4 @@ Pillow
 pre-commit
 drf-yasg
 gunicorn
+python-dotenv
