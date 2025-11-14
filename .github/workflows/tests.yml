@@ -39,7 +39,7 @@ jobs:
         run: |
           set -ex
 
-          cd travit_service && python manage.py makemigrations && python manage.py migrate && python manage.py test -v 2
+          cd service && python manage.py makemigrations && python manage.py migrate && python manage.py test -v 2
 
       - name: Cleanup
         run: |
