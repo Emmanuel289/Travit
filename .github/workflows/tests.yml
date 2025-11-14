@@ -12,20 +12,22 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: "Install Pip"
-        run: sudo apt-get install python3-pip
-
-      - name: Install virtualenv
-        run: pip3 install virtualenv
-
-      - name: Create and activate python3 virtualenv
+      - name: "Setup Python Virtual Environment"
         run: |
-          virtualenv -p python3 venv
-          source venv/bin/activate
+            set -e 
+
+            apt-get update && apt-get install python3-venv python3-pip
+            python3 -m venv venv
+            source venv/bin/activate
+            python3 -m pip install -U pip
+            python3 -m pip --version
+            
       - name: Install required packages
         run: |
-          cd travit_service || echo 'app directory does not exist'
-          pip3 install -r requirements.txt || echo 'requirements file does not exist'
+          set -e
+          cd travit_service || echo 'app directory does not exist'; exit 1
+          pip install -r requirements.txt || echo 'requirements file does not exist'; exit 1
+      
       - name: Set environment variables
         run: |
           echo "TRAVIT_CONFIG_PATH=./config.yaml" >> $GITHUB_ENV
@@ -33,6 +35,7 @@ jobs:
       - name: Run tests
         run: |
           cd travit_service && python manage.py makemigrations && python manage.py migrate && python manage.py test -v 2
+      
       - name: Cleanup
         run: |
           echo 'Tests successfully completed'
