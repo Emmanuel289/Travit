@@ -1,5 +1,5 @@
 """
-ASGI config for travit_service project.
+ASGI config for the service.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "travit_service.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "service.config.settings")
 
 application = get_asgi_application()

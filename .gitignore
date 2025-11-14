@@ -10,10 +10,10 @@ db.sqlite3
 .env
 
 # cache and state files
-travit_service/infra/.terraform
-travit_service/infra/.terraform.lock.hcl
-travit_service/infra/terraform.tf*
+service/terraform/.terraform
+service/terraform/.terraform.lock.hcl
+service/terraform/terraform.tf*
 .cache*
 
 # DB migrations
-travit_service/*/migrations/*
+service/*/migrations/*

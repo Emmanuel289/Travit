@@ -3,6 +3,9 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
 jobs:
   test_django_apps:
     name: Test Django Apps
@@ -26,7 +29,7 @@ jobs:
         run: |
           set -ex
 
-          cd travit_service || echo 'App directory does not exist'
+          cd service || echo 'App directory does not exist'
           python3 -m pip install -r requirements.txt || echo 'Failed to install required packages'
 
       - name: Set environment variables
@@ -39,11 +42,13 @@ jobs:
         run: |
           set -ex
 
-          cd travit_service && python manage.py makemigrations && python manage.py migrate && python manage.py test -v 2
+          cd service
+          python manage.py makemigrations && python manage.py migrate && python manage.py test apps/* -v 2
+          echo 'Tests successfully completed'
 
       - name: Cleanup
         run: |
           set -ex
 
-          echo 'Tests successfully completed'
-          echo 'Deactivating virtualenv...'
+          echo 'Cleaning up files and deleting virtual environment'
+          rm -rf venv

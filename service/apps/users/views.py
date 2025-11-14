@@ -14,7 +14,8 @@ class ActivateUserViewSet(UserViewSet):
         kwargs.setdefault("context", self.get_serializer_context())
 
         # this line is the only change from the base implementation
-        kwargs["data"] = {"uid": self.kwargs["uid"], "token": self.kwargs["token"]}
+        kwargs["data"] = {"uid": self.kwargs["uid"],
+                          "token": self.kwargs["token"]}
 
         return serializer_class(*args, **kwargs)
 
