@@ -1,8 +1,7 @@
 name: Test Django Apps
+
 on:
   pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
@@ -36,7 +35,7 @@ jobs:
         run: |
           set -ex
 
-          echo "TRAVIT_CONFIG_PATH=./config.yaml" >> $GITHUB_ENV
+          echo "CONFIG_FILE_PATH=./service/config/config.yaml" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
