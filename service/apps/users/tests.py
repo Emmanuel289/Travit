@@ -1,6 +1,6 @@
 from django.forms import ValidationError
 from django.test import TestCase
-from users.models import User
+from apps.users.models import User
 
 
 class UserTestCase(TestCase):

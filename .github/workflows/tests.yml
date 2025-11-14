@@ -39,11 +39,14 @@ jobs:
         run: |
           set -ex
 
-          cd service && python manage.py makemigrations && python manage.py migrate && python manage.py test -v 2
+          cd service
+          python manage.py makemigrations && python manage.py migrate && python manage.py test apps/* -v 2
 
       - name: Cleanup
         run: |
           set -ex
 
           echo 'Tests successfully completed'
-          echo 'Deactivating virtualenv...'
+          echo 'Deactivating and deleting virtual environment...'
+          deactivate
+          rm -rf venv

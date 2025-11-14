@@ -1,4 +1,4 @@
-from destinations.models import Destination
+from apps.destinations.models import Destination
 from django.forms import ValidationError
 from django.test import TestCase
 
@@ -18,11 +18,13 @@ class DestinationTestCase(TestCase):
         )
 
         first_destination = Destination.objects.get(name="test destination")
-        second_destination = Destination.objects.get(name="second test destination")
+        second_destination = Destination.objects.get(
+            name="second test destination")
 
         self.assertEqual(len(Destination.objects.all()), 2)
         self.assertEqual(Destination.objects.first(), first_destination)
-        self.assertEqual(Destination.objects.get_queryset()[1], second_destination)
+        self.assertEqual(Destination.objects.get_queryset()
+                         [1], second_destination)
 
         self.assertEqual(first_destination.name, "test destination")
         self.assertEqual(first_destination.description, "test description")
