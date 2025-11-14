@@ -40,7 +40,7 @@ DEBUG = os.getenv('DEBUG', False)
 SERVER_ADDRESS = os.getenv('SERVER_ADDRESS')
 SERVER_URL = os.getenv('SERVER_URL')
 
-ALLOWED_HOSTS = config.get('allowed_hosts') + [gethostbyname(gethostname())]
+ALLOWED_HOSTS = config.get('allowed_hosts', "localhost")
 
 if SERVER_ADDRESS:
     ALLOWED_HOSTS += [SERVER_ADDRESS]
