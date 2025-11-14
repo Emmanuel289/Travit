@@ -17,7 +17,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 # Install requirements
-cd $SERVICE_DIR 
+cd $SERVICE_DIR
 pip install -r requirements.txt --no-cache-dir
 
 # Run migrations
