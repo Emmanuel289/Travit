@@ -26,7 +26,7 @@ jobs:
         run: |
           set -ex
 
-          cd travit_service || echo 'App directory does not exist'
+          cd service || echo 'App directory does not exist'
           python3 -m pip install -r requirements.txt || echo 'Failed to install required packages'
 
       - name: Set environment variables
