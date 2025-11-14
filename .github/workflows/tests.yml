@@ -14,7 +14,7 @@ jobs:
 
       - name: "Setup Python Virtual Environment"
         run: |
-            set -e
+            set -ex
 
             sudo apt-get update && sudo apt-get install python3-venv python3-pip
             python3 -m venv venv
@@ -24,19 +24,26 @@ jobs:
 
       - name: Install required packages
         run: |
-          set -e
-          cd travit_service || echo 'app directory does not exist' && exit 1
-          pip install -r requirements.txt || echo 'requirements file does not exist' && exit 1
+          set -ex
+          
+          cd travit_service || echo 'App directory does not exist'
+          python3 -m pip install -r requirements.txt || echo 'Failed to install required packages'
 
       - name: Set environment variables
         run: |
+          set -ex
+
           echo "TRAVIT_CONFIG_PATH=./config.yaml" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
+          set -ex
+
           cd travit_service && python manage.py makemigrations && python manage.py migrate && python manage.py test -v 2
 
       - name: Cleanup
         run: |
+          set -ex
+
           echo 'Tests successfully completed'
           echo 'Deactivating virtualenv...'
