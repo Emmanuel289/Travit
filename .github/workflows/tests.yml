@@ -25,7 +25,7 @@ jobs:
       - name: Install required packages
         run: |
           set -ex
-          
+
           cd travit_service || echo 'App directory does not exist'
           python3 -m pip install -r requirements.txt || echo 'Failed to install required packages'
 
