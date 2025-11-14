@@ -3,6 +3,9 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
 jobs:
   test_django_apps:
     name: Test Django Apps
@@ -41,12 +44,11 @@ jobs:
 
           cd service
           python manage.py makemigrations && python manage.py migrate && python manage.py test apps/* -v 2
+          echo 'Tests successfully completed'
 
       - name: Cleanup
         run: |
           set -ex
 
-          echo 'Tests successfully completed'
-          echo 'Deactivating and deleting virtual environment...'
-          deactivate
+          echo 'Cleaning up files and deleting virtual environment'
           rm -rf venv
