@@ -2,7 +2,6 @@ name: Test Django Apps
 on:
   pull_request:
     branches:
-      - develop
       - main
 jobs:
   test_django_apps:
@@ -13,28 +12,38 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: "Install Pip"
-        run: sudo apt-get install python3-pip
-
-      - name: Install virtualenv
-        run: pip3 install virtualenv
-
-      - name: Create and activate python3 virtualenv
+      - name: "Setup Python Virtual Environment"
         run: |
-          virtualenv -p python3 venv
-          source venv/bin/activate
+            set -ex
+
+            sudo apt-get update && sudo apt-get install python3-venv python3-pip
+            python3 -m venv venv
+            source venv/bin/activate
+            python3 -m pip install -U pip
+            python3 -m pip --version
+
       - name: Install required packages
         run: |
-          cd travit_service || echo 'app directory does not exist'
-          pip3 install -r requirements.txt || echo 'requirements file does not exist'
+          set -ex
+
+          cd travit_service || echo 'App directory does not exist'
+          python3 -m pip install -r requirements.txt || echo 'Failed to install required packages'
+
       - name: Set environment variables
         run: |
+          set -ex
+
           echo "TRAVIT_CONFIG_PATH=./config.yaml" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
+          set -ex
+
           cd travit_service && python manage.py makemigrations && python manage.py migrate && python manage.py test -v 2
+
       - name: Cleanup
         run: |
+          set -ex
+
           echo 'Tests successfully completed'
           echo 'Deactivating virtualenv...'
