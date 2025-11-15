@@ -17,12 +17,13 @@ jobs:
       matrix:
         # Run this job for each combination of python and ubuntu versions
         python-version: [3.11, 3.12, 3.13]
-        runs-on: [ubuntu-22.04, ubuntu-24.04]
-    runs-on: ${{ matrix.runs-on }}
-
+        ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.ubuntu-version }}
+    
     # The steps that are executed in this job
     steps:
-      - name: Check out # The name of this step
+      # Clone this repo
+      - name: Checkout # The name of this step
         uses: actions/checkout@v5.0.0 # This step uses the checkout action which is used for checking out git repositories
 
       - name: Set up Python ${{ matrix.python-version }}
@@ -45,12 +46,16 @@ jobs:
           echo "CONFIG_FILE_PATH=./service/config/config.yaml" >> $GITHUB_ENV
   test:
     strategy:
-      matrix:
-        runs-on: [ubuntu-22.04, ubuntu-24.04]
-    runs-on: ${{ matrix.runs-on}}
+      matrix: 
+        ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.ubuntu-version }}
     needs: setup # This job depends on the setup job to complete successfully
 
     steps:
+      # Clone this repo
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+
       - name: Run tests
         run: |
           set -ex
