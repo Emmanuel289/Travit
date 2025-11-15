@@ -19,7 +19,7 @@ jobs:
         python-version: [3.11, 3.12, 3.13]
         ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
     runs-on: ${{ matrix.ubuntu-version }}
-    
+
     # The steps that are executed in this job
     steps:
       # Clone this repo
@@ -46,7 +46,7 @@ jobs:
           echo "CONFIG_FILE_PATH=./service/config/config.yaml" >> $GITHUB_ENV
   test:
     strategy:
-      matrix: 
+      matrix:
         ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
     runs-on: ${{ matrix.ubuntu-version }}
     needs: setup # This job depends on the setup job to complete successfully
