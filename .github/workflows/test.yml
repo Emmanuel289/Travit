@@ -1,0 +1,71 @@
+# The name of this workflow
+name: Test Django Apps
+
+# The events that trigger this workflow
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+# The jobs that run in this workflow
+jobs:
+  setup:  # The name of this job
+    strategy:
+      matrix:
+        # Run this job for each combination of python and ubuntu versions
+        python-version: [3.11, 3.12, 3.13]
+        ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.ubuntu-version }}
+
+    # The steps that are executed in this job
+    steps:
+      # Clone this repo
+      - name: Checkout # The name of this step
+        uses: actions/checkout@v5.0.0 # This step uses the checkout action which is used for checking out git repositories
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+  test:
+    strategy:
+      matrix:
+        ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
+    runs-on: ${{ matrix.ubuntu-version }}
+    needs: setup # This job depends on the setup job to complete successfully
+
+    steps:
+      # Clone this repo
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+
+     # Install dependencies
+      - name: Install Dependencies
+        run: |
+          set -ex
+
+          cd service
+          python -m pip install -U pip
+          pip install -r requirements.txt
+
+    # Set environment variables
+      - name: Set environment variables
+        env:
+            CONFIG_FILE_PATH: ./service/config/config.yaml"
+        run: |
+          set -ex
+
+          echo "Config file path: ${CONFIG_FILE_PATH}"
+
+    # Run tests
+      - name: Run tests
+        run: |
+          set -ex
+
+          cd service
+          python manage.py makemigrations && python manage.py migrate && python manage.py test apps/* -v 2
+          echo 'Tests successfully completed'
