@@ -56,4 +56,4 @@ jobs:
           echo "Setting up the Python environment to run tests."
           source "${SCRIPTS_DIR}/setup_env.sh"
           echo "Running all tests in the project directory '${PROJECT_DIR}'."
-          ./${SCRIPTS_DIR}/run_tests.sh
+          sh ${SCRIPTS_DIR}/run_tests.sh
