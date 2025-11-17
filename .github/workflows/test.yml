@@ -51,7 +51,7 @@ jobs:
           PROJECT_DIR: ./service/
         run: |
           set -e
-          
+
           echo "The project settings are stored in the config file -> ${CONFIG_FILE_PATH}"
           echo "Setting up environment to run tests."
           source "${SCRIPTS_DIR}/setup_env.sh"

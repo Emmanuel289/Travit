@@ -13,7 +13,7 @@ check_env_variable "PYTHON_PATH"
 
 echo $SCRIPT_DIR
 # Run migrations
-python3 $SERVICE_DIR/manage.py makemigrations 
+python3 $SERVICE_DIR/manage.py makemigrations
 python3 $SERVICE_DIR/manage.py migrate
 
 # Start server
