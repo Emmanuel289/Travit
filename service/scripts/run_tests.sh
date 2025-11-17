@@ -2,7 +2,7 @@
 set -e
 
 # Setup the Python virtual environment
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 source "${SCRIPT_DIR}/setup_env.sh"
 
 # Verify that environment variables have been set correctly
