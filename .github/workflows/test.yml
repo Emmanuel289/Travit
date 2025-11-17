@@ -43,29 +43,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
-     # Install dependencies
-      - name: Install Dependencies
-        run: |
-          set -ex
-
-          cd service
-          python -m pip install -U pip
-          pip install -r requirements.txt
-
-    # Set environment variables
-      - name: Set environment variables
-        env:
-            CONFIG_FILE_PATH: ./service/config/config.yaml"
-        run: |
-          set -ex
-
-          echo "Config file path: ${CONFIG_FILE_PATH}"
-
     # Run tests
       - name: Run tests
+        env:
+          SCRIPTS_DIR: ./service/scripts
+          CONFIG_FILE_PATH: ./service/config/config.yaml"
+          PROJECT_DIR: ./service/
         run: |
-          set -ex
+          set -e
 
-          cd service
-          python manage.py makemigrations && python manage.py migrate && python manage.py test apps/* -v 2
-          echo 'Tests successfully completed'
+          echo "The project settings are stored in '${CONFIG_FILE_PATH}'"
+          echo "Setting up the Python environment to run tests."
+          source "${SCRIPTS_DIR}/setup_env.sh"
+          echo "Running all tests in the project directory '${PROJECT_DIR}'."
+          bash ${SCRIPTS_DIR}/run_tests.sh
