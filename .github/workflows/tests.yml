@@ -21,6 +21,7 @@ jobs:
           - python:3.11
           - python:3.12
           - python:3.13
+      fail-fast: false
 
     # The steps that are executed in this job
     steps:
