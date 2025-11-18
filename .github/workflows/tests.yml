@@ -18,12 +18,12 @@ jobs:
         # Run this job for each combination of python and ubuntu versions
         os: [ubuntu-22.04, ubuntu-24.04]
         container:
-          - python:3.11-buster
-          - python:3.11-bullseye
-          - python:3.12-buster
-          - python:3.12-bullseye
-          - python:3.13-buster
-          - python:3.13-bullseye
+          - python:3.11-slim
+          - python:3.11-alpine
+          - python:3.12-slim
+          - python:3.12-alpine
+          - python:3.13-slim
+          - python:3.13-alpine
 
     # The steps that are executed in this job
     steps:
