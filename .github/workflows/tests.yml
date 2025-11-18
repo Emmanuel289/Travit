@@ -38,6 +38,6 @@ jobs:
         run: |
           echo "The project settings are stored in '${CONFIG_FILE_PATH}'"
           echo "Setting up the Python environment to run tests."
-          source "${SCRIPTS_DIR}/setup_env.sh"
+          bash "${SCRIPTS_DIR}/setup_env.sh"
           echo "Running all tests in the project directory '${PROJECT_DIR}'."
           bash ${SCRIPTS_DIR}/run_tests.sh
