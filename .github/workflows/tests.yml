@@ -1,47 +1,35 @@
 # The name of this workflow
-name: Test Django Apps
+name: tests
 
 # The events that trigger this workflow
 on:
   pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
 
 # The jobs that run in this workflow
 jobs:
-  setup:  # The name of this job
+  tests:  # The name of this job
+    runs-on: ${{ matrix.os}}
+    container: ${{ matrix.container }}
     strategy:
       matrix:
         # Run this job for each combination of python and ubuntu versions
-        python-version: [3.11, 3.12, 3.13]
-        ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
-    runs-on: ${{ matrix.ubuntu-version }}
+        os: [ubuntu-22.04, ubuntu-24.04]
+        container:
+          - python:3.11-buster
+          - python:3.11-bullseye
+          - python:3.12-buster
+          - python:3.12-bullseye
+          - python:3.13-buster
+          - python:3.13-bullseye
 
     # The steps that are executed in this job
     steps:
-      # Clone this repo
+      # Clone the repo to the runner
       - name: Checkout # The name of this step
-        uses: actions/checkout@v5.0.0 # This step uses the checkout action which is used for checking out git repositories
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ matrix.python-version }}
-
-  test:
-    strategy:
-      matrix:
-        ubuntu-version: [ubuntu-22.04, ubuntu-24.04]
-    runs-on: ${{ matrix.ubuntu-version }}
-    needs: setup # This job depends on the setup job to complete successfully
-
-    steps:
-      # Clone this repo
-      - name: Checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v5 # This step uses the checkout action which is used for checking out git repositories
 
     # Run tests
       - name: Run tests
@@ -50,8 +38,6 @@ jobs:
           CONFIG_FILE_PATH: ./service/config/config.yaml"
           PROJECT_DIR: ./service/
         run: |
-          set -e
-
           echo "The project settings are stored in '${CONFIG_FILE_PATH}'"
           echo "Setting up the Python environment to run tests."
           source "${SCRIPTS_DIR}/setup_env.sh"

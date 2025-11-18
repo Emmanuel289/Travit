@@ -1,6 +1,5 @@
-#!/bin/sh
-
-# Function to check whether or not an environment variable is set
+#!/usr/bin/env bash
+set -eu -o pipefail
 
 function check_not_empty {
 if [[ -z "${!1}" ]]
@@ -9,7 +8,6 @@ then
   exit 2
 fi
 }
-
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export PROJECT_DIR=$(cd "${SCRIPT_DIR}" && git rev-parse --show-toplevel)
