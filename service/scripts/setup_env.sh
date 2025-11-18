@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
 # Function to check whether or not an environment variable is set
-
 function check_not_empty {
 if [[ -z "${!1}" ]]
 then
