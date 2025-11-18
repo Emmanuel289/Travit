@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 set -eu -o pipefail
 
 # Setup the Python virtual environment
