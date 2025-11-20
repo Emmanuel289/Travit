@@ -19,6 +19,6 @@ service/terraform/terraform.tf*
 # DB migrations
 service/*/migrations/*
 
-# Terraform 
+# Terraform
 .terraform*
 terraform/terraform.*
