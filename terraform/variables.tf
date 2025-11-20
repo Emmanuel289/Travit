@@ -3,71 +3,38 @@ variable "name" {
   description = "Deployment name"
 }
 
-variable "ami_id" {
-  type        = string
-  description = "AMI ID"
-  default     = "ami-0abc4c35ba4c005ca"
+variable "region" {
+  default     = "us-east1"
+  description = "GCP region to deploy to"
 }
 
-variable "aws_region" {
-  default     = "ca-central-1"
-  description = "AWS region to deploy to"
+variable "zone" {
+  default     = "us-east1-c"
+  description = "GCP zone to deploy to"
 }
 
-variable "aws_profile" {
-  default     = ""
-  description = "AWS profile to use when authenticating"
+variable "network" {
+  default     = "travit-network"
+  description = "The VPC to host the service"
 }
 
-variable "aws_credentials" {
-  default     = "~/.aws/credentials"
-  description = "AWS credentials file to use when authenticating"
+variable "subnet" {
+  default     = "travit-subnet"
+  description = "The subnet to host the service"
 }
 
-variable "remote_cache" {
-  default     = "/home/ubuntu/.cache/travit"
-  description = "Remote cache directory"
-
-}
-variable "key_name" {
-  default     = "travit-svc-key"
-  description = "Key pair name"
-}
-
-variable "vpc_id" {
-  default     = ""
-  description = "Existing VPC ID"
-}
-
-variable "subnet_id" {
-  default     = ""
-  description = "Existing subnet ID"
-}
-
-variable "vpc_cidr" {
+variable "cidr_range" {
   default     = "10.0.0.0/20"
-  description = "VPC CIDR range"
+  description = "The CIDR block for allocating IP addresses"
 }
 
-variable "instance_type" {
-  default     = "t2.micro"
-  description = "Server instance type"
+variable "machine_type" {
+  description = "The machine type for the instance"
+  default     = "e2-small"
 }
 
-variable "disk_size" {
-  default     = 8
-  description = "Server disk size"
-}
-
-variable "key_file" {
-  default     = "~/.ssh/travit-svc-key.pem"
-  description = "Path to private key file"
-}
-
-
-variable "db_password" {
+variable "machine_name" {
   type        = string
-  default     = ""
-  description = "Database password"
-  sensitive   = true
+  description = "The name of the VM running the service"
+  default     = "travit-server"
 }
