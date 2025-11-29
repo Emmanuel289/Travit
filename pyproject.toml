@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Travit"
+dynamic = ["version", "dependencies"]
+requires-python = ">=3.10"
+keywords = ["Travel", "Recommendations"]
+authors = [
+  { name = "Okechukwu Ochia", email = "emmirald@gmail.com" },
+]
+description = "SDK for Travit"
+readme = "README.md"
+license = "MIT"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Documentation = "https://github.com/Emmanuel289/Travit/README"
+Source = "https://github.com/Emmanuel289/Travit"
+
+[project.scripts]
+travit-cli = "service.cli:main"
+
+[tool.hatch.version]
+path = "service/__init__.py"
+
+[tool.hatchling.dynamic]
+version = {attr = "service.__version__"}
+dependencies = {file = ["./service/requirements.txt"]}
+
+[tool.hatch.build.targets.wheel]
+packages = ["service"]
+
+[tool.pytest.ini_options]
+addopts = ""
+testpaths = [
+    "apps/tests"
+]
