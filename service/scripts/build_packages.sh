@@ -18,9 +18,9 @@ else
     exit 1
 fi
 
-case ${PACKAGE_TYPE} in 
+case ${PACKAGE_TYPE} in
     "python")
-    
+
     python -m pip install build
     python -m build $SCRIPT_DIR/../../
     ;;
