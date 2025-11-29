@@ -25,7 +25,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          bash -c ./service/scripts/set_env.sh
+          bash -c ./service/scripts/setup_env.sh
 
 
       - name: Run Tests
