@@ -10,23 +10,26 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Setup Python 3.12
+      - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
-            python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
-          python -m venv .venv
+          PYTHON_VERSION=$(python -V)
+          PYTHON_PATH=$(which python)
+          echo "Installed version of python is '${PYTHON_VERSION}' and install path is '${PYTHON_PATH}'"
           python -m pip install -U pip
-          source .venv/bin/activate
           echo "pytest" > requirements-test.txt
           python -m pip install -r requirements-test.txt
 
@@ -34,3 +37,13 @@ jobs:
         run: |
             source .venv/bin/activate
             python -m pytest ./service/apps/*/*
+      
+  cleanup:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup test artifacts
+        run: |
+           echo "Remove virtual env files"
+           rm -rf .venv
+            
