@@ -27,10 +27,9 @@ jobs:
           python -m venv .venv
           python -m pip install -U pip
           source .venv/bin/activate
-          if [ -f requirements.txt ]; then
-            python -m pip install -r requirements.txt
-          fi
-
+          echo "pytest" > requirements-test.txt
+          python -m pip install -r requirements-test.txt
+      
       - name: Test with pytest
         run: |
             pytest
