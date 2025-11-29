@@ -32,4 +32,4 @@ jobs:
 
       - name: Test with pytest
         run: |
-            .venv/bin/python -m pytest
+            .venv/bin/python -m pytest ./service/apps/*
